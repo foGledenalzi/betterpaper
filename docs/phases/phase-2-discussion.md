@@ -14,7 +14,7 @@ Date: 2026-10-06
 | Citation by hyperlink | Add a link-citation style | Fourth style `links` and `references/web-links.md` with a new `[H]` house-rule tag (D21). |
 
 ## Grey-area sheet
-`docs/phases/phase-2-open-decisions.md` holds 26 rows with recommended defaults (G1-G26): init interview and flags, workspace limits, imported history, privacy notice, locator numbering, declared thesis, assignment brief, spelling variety, tracker row size, anchor usability, `--confirm` behaviour, cross-essay anchors, demo size and labelling, Python probe, version floor. **Status: open.** Reply "defaults are fine" to accept all, or list the numbers to change.
+`docs/phases/phase-2-open-decisions.md` holds 26 rows with recommended defaults (G1-G26): init interview and flags, workspace limits, imported history, privacy notice, locator numbering, declared thesis, assignment brief, spelling variety, tracker row size, anchor usability, `--confirm` behaviour, cross-essay anchors, demo size and labelling, Python probe, version floor. **Status: accepted as written (user, 2026-10-06: "Defaults fine for now").**
 
 ## Research subphase (next, after the sheet is answered)
 1. Claude Code skill facts to confirm against the docs: `allowed-tools` syntax for `python`, `python3` and `py -3` patterns; `disable-model-invocation`; `argument-hint`; whether a skill may ask questions with the question tool; `${CLAUDE_SKILL_DIR}` and `${CLAUDE_PLUGIN_ROOT}` behaviour on Windows; script executability in a plugin.

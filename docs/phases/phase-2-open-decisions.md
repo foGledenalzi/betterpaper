@@ -1,8 +1,8 @@
 # Phase 2: grey-area questionnaire with recommended defaults
 
-Date: 2026-10-06. **STATUS: OPEN.** Phase 2 builds the `init` skill, the five workspace templates, `references/tracker-rules.md` and the minimal demo. The four headline questions (demo sources, ledger storage, platform, draft format) are asked interactively and recorded in `docs/phases/phase-2-discussion.md`. This sheet holds the grey areas: points the plan leaves open, where reasonable people differ, or where a wrong guess would be costly to undo. Every row has a recommended default. Reply "defaults are fine" to accept all, or list the numbers you want changed.
+Date: 2026-10-06. **STATUS: ACCEPTED by the user on 2026-10-06 ("Defaults fine for now").** Every row below is adopted as written and referred to as G1-G26; rows can be revisited after first real use. Phase 2 builds the `init` skill, the five workspace templates, `references/tracker-rules.md` and the minimal demo. The four headline questions (demo sources, ledger storage, platform, draft format) are asked interactively and recorded in `docs/phases/phase-2-discussion.md`. This sheet holds the grey areas: points the plan leaves open, where reasonable people differ, or where a wrong guess would be costly to undo. Every row has a recommended default. Rows can be revisited after first real use.
 
-Evidence base for the defaults: `docs/design/method-digest.md` (sections 4 and 5), `docs/design/file-contracts.md` (sections 1, 7 and 10) and the Phase 1 build notes. Accepted rows will be recorded as G1-G26 in `DECISIONS.md`.
+Evidence base for the defaults: `docs/design/method-digest.md` (sections 4 and 5), `docs/design/file-contracts.md` (sections 1, 7 and 10) and the Phase 1 build notes. Accepted rows are recorded as G1-G26 in `DECISIONS.md`.
 
 ## A. Workspace and init
 
