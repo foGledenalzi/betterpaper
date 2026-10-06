@@ -152,3 +152,8 @@ Evidence: `docs/research/phase-1/evidence-limits-round2.md` (search-result-level
 - **A51.** The gold set includes a double-marked subset (more than one defensible grade is allowed), and a weight-sensitivity check against equal weights, median and minimum.
 - **A52.** The report and README say the grade is not a target to optimise.
 - **A53.** Reviewers are never told whether an essay was AI-assisted or where it came from. Known limits 18-26 are added from this review.
+
+## Style sources: snippets supplied 2026-10-06 and A54-A55
+The user supplied excerpts from the full CMOS 18 and MLA 9 texts; they are summarised in addendum C of `docs/research/phase-1/purdue-deck-verification.md`. Most remaining `[U]` style rules are now closed; the unconfirmed list is in addendum C6.
+- **A54 (extends A47).** A difference is also a near-match, never a mismatch, when the author modified a published translation and flagged it ("translation modified", square brackets), or declared their own translation and supplied the original passage.
+- **A55 (clarifies A53).** The tool never detects or asks about AI use and reviewers are never told whether an essay was AI-assisted. When the essay itself states that it used an AI tool, the source-verifier checks that the use is stated and cited as the Manual requires (CMOS 14.112: tool, developer, version, date, URL where one exists, and "edited" if edited); the check reads only the draft's own text.

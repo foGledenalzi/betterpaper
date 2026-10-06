@@ -149,3 +149,61 @@ Supplied 2026-10-06 as a text file of excerpts with CMOS 18 section numbers (14.
 5. The exact CMOS 18 section number for abbreviating frequently cited works and for "edited and translated by" in bibliographies.
 
 Net: the Chicago side is now in good shape. The reviewer treats the remaining five items as "check your style guide".
+
+---
+
+# Addendum C: CMOS 18 and MLA 9 snippets supplied by the user (2026-10-06)
+
+The user extracted excerpts from the full texts and supplied them as two text files. CMOS 18: author-date (13.101-13.128), websites, blogs and social media (14.103-14.107), interviews and personal communications (14.108-14.111), AI-generated content (14.112), patents, standards and secondary sources (14.158-14.160), translated titles and translated quotations (13.101, 11.9-11.19), frequently cited works, sacred works, classical abbreviations. MLA Handbook 9: poetry (6.36-6.38), line and division citation, translations (2.57, 5.31, 6.75), indirect sources (6.77), and Appendix 2 works-cited examples. The text has OCR artefacts (for example a malformed DOI prefix in one MLA example); those were ignored. Tags **[C18]** and **[MLA9]** mean "in the Manual" and "in the Handbook"; they override every earlier tag. All wording is paraphrased.
+
+## C1. Chicago author-date: now confirmed [C18]
+- **Overview.** Text citations give the author's last name and the year in parentheses; the reference list (titled "References" or "Works Cited") is a bibliography with the year directly after the author's name (13.101-13.102).
+- **Abbreviations (13.103).** In the reference list, noun forms (editor, translator, volume, edition) are abbreviated; verb forms ("Edited by", "Translated by") are spelled out; in text citations all such terms are omitted.
+- **Page numbers (13.104, 13.109).** A text citation may give a page or range after the year, separated by a comma. A reference-list entry gives the page range for a journal article but omits most other page numbers, including a chapter in an edited book (a departure from earlier editions).
+- **Entry forms (13.106-13.110).** Single author or editor (ed. or eds. in the list, omitted in text); two authors (only the first inverted; both last names in text); more than two authors: up to six in the list (more than six: first three plus "et al."), first author plus "et al." in text; author plus translator ("Translated by" spelled out; the year is that of the edition used); chapter in an edited book ("In <title>, edited by <name>"); journal article (volume, issue in parentheses, page range after a colon, DOI as an `https://doi.org/` link).
+- **Reference lists (13.111-13.114).** Alphabetical; several works by one author in ascending order of date; names are repeated for successive works (the 3-em dash is still permitted but no longer recommended); same author and year distinguished as 2004a, 2004b (by title order), and `n.d.-a` or `forthcoming-a` for undated or forthcoming items.
+- **Text citations (13.115-13.128).** Every text citation needs a matching list entry; basic form has no punctuation between name and year; multiple sources separated by semicolons; same surname distinguished by initial; locators follow the date after a comma (vol., colon for volume and page, sec., chap., eq., `n` for a note, a heading for unnumbered web text); added comments follow a semicolon; the citation precedes punctuation, and in a block quotation the parenthesis follows the final punctuation with no period after it; consecutive citations to one source may be placed after the last reference with later pages bare; prefer "in Smith (1999)" to "in Smith 1999"; more than two authors take first author plus "et al." (not italic in text), extended to the first two authors or a short title when two works would collide; multiple works by the same author cited by date only; "see also" follows other references; no-author works cite the title (up to the first four words); pseudonyms and organisations as authors have their own forms; notes may supplement author-date for substantive comment only.
+
+## C2. Corrections to earlier notes
+- **"ed." in a reference list is not an error.** The earlier author-date research listed `ed.` and `trans.` in list entries as a format slip. Under 13.103 the noun form `ed.` or `eds.` after a name is correct; the verb forms "Edited by" and "Translated by" are spelled out, and `trans.` or `ed.` as a verb abbreviation is the slip.
+- **3-em dash.** The earlier note said the 18th edition requires repeating the name. The Manual says repeating is now recommended and the dash is still allowed for authors or publishers who need it (13.113).
+- **Chapter page range.** Confirmed omitted in the reference list (13.109).
+- **"Quoted in", notes-bibliography.** Reconfirmed: both the original and the secondary source must be listed if the original is unavailable; author-date lists only the secondary source, with the original named in the text (14.160).
+- **Newsletters.** Still not named. The Manual treats a blog as a periodical, with the blog title in italics and "(blog)" added if the title does not make that clear (14.105); a newsletter post is therefore cited by analogy, tagged `[S]`.
+
+## C3. New confirmed rules [C18]
+- **Web pages (14.104).** Usually cited in the text or a note, not in a bibliography; a bibliography entry, if needed, is listed under the owner or sponsor; include a publication or revision date, or an access date if none; archived copies (Wayback Machine, Perma.cc) may be cited. In author-date style an undated page uses lowercase `n.d.`, preceded by a comma in a text citation.
+- **Blogs (14.105).** Author, post title in quotation marks, blog title in italics, date, URL; comments are cited in terms of the post; in author-date style the year follows the author.
+- **Social media, forums, mailing lists (14.106-14.107).** Usually mentioned in text or a note, not listed; a note quotes enough of the post to identify it (up to 280 characters); platform names are treated like website names; private messages are personal communications.
+- **Interviews and personal communications (14.108-14.111).** Cited in text or a note; in author-date style personal communications are cited in the text only, after the name.
+- **AI-generated content (14.112).** An author who relied on a chatbot or similar tool must make clear how it was used, in the text, a note or a preface; specific content, quoted or paraphrased, is cited where it occurs (tool as author, developer as publisher, version number, date generated, a public URL if there is one, and "edited" if edited); chatbot conversations are not usually listed in a bibliography.
+- **Translated titles (13.101).** An English translation of a title follows the original in brackets, in sentence case, not italic or quoted; a title given only in English translation notes the original language in brackets; if both an original and a translation are cited, the bibliography may add "Originally published as <title> (<publisher>, <year>)" after the translated entry, or the reverse.
+- **Translated quotations (11.16-11.19).** Credit the published translation (title, translator, bibliographic details, page); an author's own translation must be declared ("my translation"); a machine translation must be credited; modifying a published translation needs "translation modified" and square brackets; never retranslate a passage from a translation (find the original); edit a translated quotation only within the permitted changes.
+- **Frequently cited works (13.65, 12.78).** A frequently cited work may be abbreviated in text or later notes with the full citation at first mention and "hereafter cited as <abbreviation>" (more helpful with footnotes); an abbreviated title may rearrange or abbreviate words, unlike a short title.
+- **Classical and sacred works.** Classical abbreviations follow the Oxford Classical Dictionary list and replace "ibid." (14.144, already C18); other sacred works are treated like biblical or classical works, with the version or translator named and divisions cited by number (for example Koran 19:17-21).
+- **Patents and standards (14.158-14.159).** Cited by title, issuing body, dates and URL.
+
+## C4. MLA 9: now confirmed [MLA9]
+- **Poetry (6.36-6.38).** Up to about three lines of verse may run in, in quotation marks, with a forward slash and a space on each side to mark line breaks and two slashes for a stanza break; a verse quotation of **more than three lines** is set off as a block, indented half an inch, with no added quotation marks; a long line takes a hanging indent; unusual spacing is reproduced; the citation follows the last line (on a new line, flush right, if it does not fit). This resolves the Purdue deck's self-contradiction (conflict C5).
+- **Classical and standard works with divisions.** Cite by division and line, not page: line numbers only as "line" or "lines" (not l. or ll.), "bk. 18, lines 129-31" for a book of an epic, and "1.5.35-37" with a short title for a play; the Works Cited entry names the translation or edition used (translator after the title; for a play in an anthology, the anthology's page range). This covers the Homer and Shakespeare pattern; Plato and Aristotle numbering is still not shown specifically.
+- **Page ranges.** The Handbook's own examples elide the second number to its last two digits when it has more than two (139-60, 114-29, 1135-97, 1306-42) and give two-digit ranges in full (18-19). The Douglas guide's full-digit ranges are therefore a lesser form: treat both as acceptable, with the elided form preferred.
+- **Months.** Abbreviated in the examples (Jan., Feb., Apr., Aug., Sept., Oct., Nov., Dec.) except May, June and July; this settles the earlier month-abbreviation item at example level.
+- **Translations and quotations (2.57, 5.31, 6.75).** A translated word or phrase goes in double quotation marks inside parentheses, or in single quotation marks without parentheses; in prose, give an original-language title with its translation at first reference; in Works Cited a translation of a title is usually unnecessary and, if given, goes in square brackets after the original; never supply an own translation without the original quotation; give the source of both quotation and translation; if the translation is the author's own, put "my trans." in the parenthetical citation.
+- **Indirect sources (6.77).** "qtd. in" before the indirect source in the parenthetical citation, and the indirect source (not the one quoted) goes in Works Cited; not needed if the prose makes the secondhand status clear.
+- **Works Cited examples.** Original publication year as an optional element after the title ("The Inferno. Translated by John Ciardi. 1965. Signet Classic, 2001."); a repeated author is replaced by a dash; translator and editor as contributors after the title ("Translated by ..., edited by ..."); special issues, nonconsecutive pagination ("pp. 1+"), double issues ("nos. 3-4"), and URLs given without "https://".
+- **Not shown.** Translator-first entries, and Plato and Aristotle (Stephanus and Bekker) numbering.
+
+## C5. Conflicts and items now closed
+- C5 (MLA poetry block threshold): closed, more than three lines.
+- A9 (MLA page-range elision): closed in favour of elision [MLA9 examples].
+- A10 (MLA months): closed [MLA9 examples].
+- Chicago `[U]` items closed: the author-date reference list and in-text rules; the wording "Edited by" and "Translated by" in reference lists; abbreviating frequently cited works (the earlier section number was 13.65 with 13.64); original-publication information for translated books; italics for abbreviations were already closed in addendum B.
+
+## C6. Still unconfirmed
+1. Two-edition (A/B) and academy-edition ("Ak.") numbering for modern classics, in either Chicago system or MLA.
+2. Chicago author-date handling of ancient works and standard divisions.
+3. Newsletter posts as a named category in either style (blogs are covered).
+4. MLA translator-first entries; MLA treatment of Plato and Aristotle numbering by name.
+5. CMOS 18 on "ibid." and short forms (only the frequently-cited-works abbreviation was supplied).
+
+None blocks Phase 1: each stays `[U]` and the reviewer says "check your style guide".
