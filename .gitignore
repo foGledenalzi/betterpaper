@@ -1,0 +1,19 @@
+# Essay workspaces and private material must never be committed.
+# Anchored so the plugin folder plugins/betterpaper/ is not hidden.
+/betterpaper/
+**/drafts/
+**/reviews/
+**/reviewer-notes/
+**/anchors/
+**/sources/
+
+# The fictional demo essay under examples/ is the only exception.
+!/examples/**/drafts/
+!/examples/**/reviews/
+!/examples/**/reviewer-notes/
+!/examples/**/anchors/
+!/examples/**/sources/
+
+.DS_Store
+__pycache__/
+*.pyc

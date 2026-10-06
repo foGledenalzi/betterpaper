@@ -1,0 +1,8 @@
+{
+  "name": "betterpaper",
+  "description": "Grades successive drafts of humanities essays consistently: file-based state, independent reviewers, and quotation checks before grading.",
+  "version": "0.1.0",
+  "author": {
+    "name": "foGledenalzi"
+  }
+}

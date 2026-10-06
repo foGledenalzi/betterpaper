@@ -1,0 +1,14 @@
+{
+  "name": "betterpaper",
+  "description": "Marketplace for the betterpaper essay-grading plugin",
+  "owner": {
+    "name": "foGledenalzi"
+  },
+  "plugins": [
+    {
+      "name": "betterpaper",
+      "source": "./plugins/betterpaper",
+      "description": "Grades successive drafts of humanities essays consistently: file-based state, independent reviewers, and quotation checks before grading."
+    }
+  ]
+}
