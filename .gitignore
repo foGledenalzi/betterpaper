@@ -10,14 +10,14 @@
 **/_private/
 **/feedback/
 
-# The fictional demo essay under examples/ is the only exception.
-!/examples/**/drafts/
-!/examples/**/reviews/
-!/examples/**/reviewer-notes/
-!/examples/**/anchors/
-!/examples/**/sources/
-!/examples/**/worksheets/
-!/examples/**/feedback/
+# The fictional demo workspace shipped inside the plugin is the only exception.
+!/plugins/betterpaper/demo/**/drafts/
+!/plugins/betterpaper/demo/**/reviews/
+!/plugins/betterpaper/demo/**/reviewer-notes/
+!/plugins/betterpaper/demo/**/anchors/
+!/plugins/betterpaper/demo/**/sources/
+!/plugins/betterpaper/demo/**/worksheets/
+!/plugins/betterpaper/demo/**/feedback/
 
 .DS_Store
 __pycache__/

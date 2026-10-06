@@ -6,8 +6,8 @@ set -u
 DL="${BETTERPAPER_DENYLIST:-../betterpaper-private/denylist.txt}"
 [ -r "$DL" ] || { echo "privacy-scan: denylist not found at $DL (set BETTERPAPER_DENYLIST)"; exit 2; }
 fail=0
-# path check: no tracked files in private locations outside examples/
-bad=$(git ls-files | grep -E '(^|/)(drafts|reviews|reviewer-notes|anchors|worksheets|feedback|_private)/' | grep -v '^examples/' || true)
+# path check: no tracked files in private locations outside the demo folder
+bad=$(git ls-files | grep -E '(^|/)(drafts|reviews|reviewer-notes|anchors|worksheets|feedback|_private)/' | grep -v '^plugins/betterpaper/demo/' || true)
 top=$(git ls-files | grep -E '^betterpaper/' || true)
 [ -n "$bad$top" ] && { echo "privacy-scan: private-looking paths are tracked:"; echo "$bad$top"; fail=1; }
 # content check on tracked files

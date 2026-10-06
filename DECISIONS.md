@@ -69,3 +69,28 @@ The user confirmed that the grades in the earlier reviews they supplied were ass
 - Grade descriptors tagged `[observed]` in `grade-bands.md` mean "seen in earlier unconfirmed reviews".
 - A later grade comparison against those reviews measures self-consistency, not accuracy, until a human confirms the grades; objective checks (quotation mismatches, recurring proofreading items) are unaffected.
 - **Correction to the R1 rationale.** Agreement between equal weights and the tool's earlier overall grades only shows that equal weights match how the tool aggregated its own criterion grades. It is not evidence that equal weights match a human grader. R1 stays as accepted (equal weights, editable) and is tested in the gold-set evaluation once human grades exist.
+
+## Provisional decisions A1-A22 (assistant defaults, 2026-10-06)
+Made while resolving the adversarial plan review. They fill gaps the accepted decisions left open; the user can override any of them. Detail is in `docs/design/method-digest.md`.
+- **A1** A *band* is a letter grade spanning its plus and minus steps; a *step* is one rung of the 12-step scale; the top band is the A range. "Notch" is retired.
+- **A2** Weights are relative integers (default 1 each), exact arithmetic; round to the nearest step; an exact tie goes to the lower step under harsh and the higher under neutral.
+- **A3** Harsh and neutral differ in two rules only: tie direction, and evidence for B+ or above (harsh: two verified strengths; neutral: one). Stored in `RUBRIC.md` and the report header; the severity eval swaps only this block.
+- **A4** Reviewer waves: wave 1 in parallel (source-verifier, primary-text-reviewer, mechanics-reviewer, voice-echo-reviewer); wave 2 argument-reviewer, given the verified ledger and precedent register but no other reviewer's findings or grades.
+- **A5** Disagreement signal: the orchestrator's holistic cross-check differs from the weighted grade by a letter band, or two runs differ by a letter band. Repeat the relevant reviewers once when the mean is within 0.05 of a tie point or in the top band.
+- **A6** Anchors: `anchor_count` default 4 (provisional, tested by an eval arm), spanning the scale with at least one top-band and one low-band anchor where confirmed ones exist; seed in `RUBRIC.md`; per-reviewer order from seed and reviewer name, logged in `STATE.md`; the draft under review and near-duplicates excluded; layout `anchors/draft-N/{text.md, ANCHOR.md}`; `ANCHOR.md` carries per-criterion grades and both overall series, and the "alone" series anchors the band; the grade step appends the new draft as an unconfirmed anchor.
+- **A7** With no confirmed anchors: rubric-only grading, confidence forced low ("no confirmed anchors"), an "unanchored" banner, and the human-check flag.
+- **A8** Reviewers never see earlier grades or author claims; they receive a stripped tracker extract; only the orchestrator compares drafts.
+- **A9** The source-verifier owns the citation ledger and all citation-form checks, loading the style file selected by `RUBRIC.md`; the mechanics-reviewer is prose-level only (amends D8).
+- **A10** The echo check is a pre-review stage in Map, run once, with its output passed to source-verifier, primary-text-reviewer and voice-echo-reviewer; imported reviews and third-party feedback live in `feedback/`.
+- **A11** Refinement of R8: the four-condition integrity test with an evidence standard, normalisation, a non-trigger list and an event log (see the digest).
+- **A12** Severity key tiers 0-5; rank by residual damage to the thesis.
+- **A13** Target grade: the next letter band above the "alone" grade; under a cap the target is the "alone" grade; no target in the top band.
+- **A14** Author markers arrive via an optional `--markers <annotated previous report>`, parsed as claims only.
+- **A15** Quick mode: orchestrator grades inline; precheck, echo, cited-span and filler checks run; "Integrity test not run" banner; never caps.
+- **A16** Reports render as Markdown with fixed headings, about 250-270 lines, verdict 3-4 sentences of 35-60 words.
+- **A17** The real gold set is private (outside the repo); `evals/gold-set/` holds only a format spec and synthetic fixtures; consent is required for others' drafts; target at least 20 drafts with at least 3 near the top band (minimum useful 10); results are recorded as aggregates only.
+- **A18** `eval_metrics.py` is added; Phase 6 splits into define and run; arms: anchor count, anchor order, guess-then-reveal, panel versus single, holistic cross-check, severity, style perturbation, injection, quick versus full.
+- **A19** The demo essay ships inside the plugin (`plugins/betterpaper/demo/`); evals live at the repo root and need a clone to run (amends R21).
+- **A20** Paths use `${CLAUDE_PLUGIN_ROOT}`.
+- **A21** `voice-echo-reviewer` has `Read, Grep` only; no agent has Bash; web queries contain only attributed quotations or public work details.
+- **A22** Privacy: denylist outside the repo; `tools/privacy-scan.sh` in the Verify steps and as a pre-push hook; shipped reference, skill and agent files contain no D, R or A codes; `DECISIONS.md` is development-only.
