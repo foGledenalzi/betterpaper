@@ -86,7 +86,7 @@ Reviewers receive a stripped extract with: row ID, category, subtype or pattern,
 |---|---|---|
 | MISMATCH, route (a): counter-passage in matching edition | yes | the counter-passage and its locator |
 | MISMATCH or PARAPHRASE-IN-QUOTES with REVIEW-ECHO, route (b) | yes | word diff against the archived report; no opened text of the work contains the wording |
-| MISMATCH from a complete searchable text, route (c) | yes | name of the text, its completeness, the negative result |
+| UNVERIFIED with NOT-FOUND from a complete searchable text of the matching edition | no on its own | supports a trigger only together with route (a) or (b); record the text, its completeness and the negative result |
 | Any of the above, secondary source only | no | listed with the label "checked against a secondary source" |
 | SECONDARY-ECHO, UNVERIFIED, NOT-FOUND in a partial corpus | no | none |
 | OCR-ERROR, TRANSPOSED without change of sense, MISATTRIBUTED, NEAR-VERBATIM-UNMARKED, MARKS-WITHOUT-SOURCE | no | none |
@@ -96,13 +96,15 @@ Defect code to severity tier: TERM-VS-SOURCE 1, RELATION-INVERTED 1, METHOD-VS-S
 
 **Counters to printed tags.** `(second round)`, `(third round)` and `(round N)` read `rounds_flagged`; `(unchanged since draft M)` and `(half fixed)` read `drafts_present` and status; `(pattern flagged in N reviews)` reads the PATTERNS table; `(not rechecked)` marks a CANNOT-CHECK carry-forward; `(reopened)` marks a REGRESSED row. A SUPERSEDED parent is represented by its child, which is its destination under the completeness invariant.
 
+**Status and flag definitions.** PARAPHRASE-IN-QUOTES: the source was found and its sense is paraphrased inside marks attributed to it (can feed the split). MARKS-WITHOUT-SOURCE: the marked text is the author's own or has no source, as with scare quotes (never feeds the split). MISMATCH: wording differs in sense from a located counter-passage. TRANSPOSED: a status for reordered wording with no change of sense. SWAPPED-WORDS: a flag for a short quoted phrase with a few words changed from an earlier report's wording. REF-COPY-OCR: a flag that the only available copy of the source is a scan with OCR, so it cannot ground VERIFIED-PRIMARY. NOT-FOUND: a flag that a search of a named text found nothing. QUOTED-IN: the wording appears in an intermediary the author did not cite. REVIEW-ECHO: the draft wording matches an archived report's wording. SECONDARY-ECHO: the draft wording matches a secondary summary's own phrasing.
+
 ## 6. Scripts: defaults and contracts
 
 All Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input.
 
 - `extract_quotes.py <draft> [--precheck]`: worksheet skeleton; precheck warns on PDF or OCR artefacts and broken quotes.
 - `echo_check.py <draft> <feedback...>`: flags `--min-run 6`, `--content-run 4`, `--window 12`, `--rare-min-len 9`, `--secondary <file>...` (summaries registered in `SOURCES.md`), `--exclude-source-text <file>...`, `--exclude-own <earlier draft>...`, `--out <path>`; excludes spans a review itself marks as draft quotes; classification column: inside marks under another author's name, unquoted, or heading word used to characterise a source; also run on the new report's text.
-- `check_cited_spans.py <draft> <findings...>`: checks only the Draft quote column after normalising whitespace, punctuation and hyphenation; failures are dropped or marked "paraphrase, not a quotation".
+- `check_cited_spans.py <draft> <findings...>`: checks the Draft quote column and the ledger string field (Locator is navigation only) after normalising whitespace, punctuation and hyphenation; failures are dropped or marked "paraphrase, not a quotation".
 - `compute_grade.py <RUBRIC.md> <grades.json>`: as section 2, with exact arithmetic.
 - `select_anchors.py <workspace> --reviewer <name>`: selects up to `anchor_count` confirmed anchors spanning the scale (at least one top-band and one low-band where confirmed ones exist), excludes the draft under review and near-duplicates (`near_duplicate_pct`), orders by sha1(seed|reviewer|anchor id), prints `anchors: N (M near the top band)`.
 - `report_lint.py <review> <draft>`: paste test, replacement-wording flags, missing labels, reviewer coinages in quotation marks, non-neutral headings, verdict length, free-hand recurrence words, missing header or footer.
