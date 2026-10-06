@@ -9,6 +9,9 @@
 **/worksheets/
 **/_private/
 **/feedback/
+**/RUBRIC.md
+**/STATE.md
+**/SOURCES.md
 
 # The fictional demo workspace shipped inside the plugin is the only exception.
 !/plugins/betterpaper/demo/**/drafts/
@@ -18,6 +21,13 @@
 !/plugins/betterpaper/demo/**/sources/
 !/plugins/betterpaper/demo/**/worksheets/
 !/plugins/betterpaper/demo/**/feedback/
+!/plugins/betterpaper/demo/**/RUBRIC.md
+!/plugins/betterpaper/demo/**/STATE.md
+!/plugins/betterpaper/demo/**/SOURCES.md
+!/plugins/betterpaper/demo/RUBRIC.md
+!/plugins/betterpaper/demo/STATE.md
+!/plugins/betterpaper/demo/SOURCES.md
+!/plugins/betterpaper/skills/init/templates/*.md
 
 .DS_Store
 __pycache__/
