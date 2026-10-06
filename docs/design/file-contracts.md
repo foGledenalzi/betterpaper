@@ -113,7 +113,7 @@ All Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input.
 ## 7. Skills
 
 - **init** `argument-hint: "<essay-slug> [--confirm]"`; slug `[a-z0-9-]+`, at most 60 characters, otherwise reject (no `/`, no `..`, no spaces); if `betterpaper/<slug>/` exists, stop and offer to resume; create the full tree including `feedback/` and `anchors/`; if the working folder is a git repository, check that `betterpaper/` is ignored and offer to append it; for slug `demo-essay` copy from `${CLAUDE_SKILL_DIR}/../../demo/`. `--confirm` applies `anchors/CONFIRM.md`.
-- **grade** `argument-hint: "<essay-slug> [draft-file-or-url] [--quick] [--markers <file>]"`; scoped agent names `betterpaper:<agent>`; `allowed-tools` limited to Read, Write and Edit under the workspace, Grep, Glob, WebFetch, Agent, and `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/*` (confirm the exact allowed-tools syntax in the skills docs); README lists Python 3 as a prerequisite.
+- **grade** `argument-hint: "<essay-slug> [draft-file-or-url] [--quick] [--repeat] [--markers <file>]"`; scoped agent names `betterpaper:<agent>`; `allowed-tools` limited to Read, Write and Edit under the workspace, Grep, Glob, WebFetch, Agent, and `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/*` (confirm the exact allowed-tools syntax in the skills docs); README lists Python 3 as a prerequisite.
 - **Agents** carry no Bash tool (a Phase 3 Verify greps frontmatter for it).
 
 ## 8. Style files

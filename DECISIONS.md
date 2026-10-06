@@ -127,3 +127,15 @@ Fill gaps and amend earlier provisional decisions; the user can override any of 
 
 ## Research-note swap (2026-10-06)
 At the user's request the public research notes were rewritten with invented works in place of examples tied to the author's own subject matter: the two-author translated-work and abbreviation example, the two-edition (A/B) pagination example, the newsletter-platform example, and a theory-fiction source that is out of scope under D14. Conventions are described generically; style-rule tags and confidence levels are unchanged.
+
+## Q&A on provisional defaults (user answers, 2026-10-06) and A43
+The user reviewed the most consequential assistant defaults and answered as follows. Unless stated, the answer confirms the default.
+- Harsh rule (A3, A26): **confirmed**, two verified strengths for B+ or above under harsh.
+- Anchors (A6, A28): **confirmed**, up to 4 confirmed anchors spanning the scale, near-duplicate at 85%, same-essay anchors allowed.
+- Repeat runs (A30, A42): **changed**, see A43.
+- Cost prompt (A15 and Phase 5): **confirmed**, print an estimate and proceed without asking.
+- Report size (A16): **confirmed**, about 250-270 lines, at most 12 ranked problems.
+- Reviewer blindness (A23): **confirmed**, reviewers never see the essay's grade history.
+- Quick mode (A15): **confirmed**, prints a grade with a visible banner and never caps.
+- Gold set (A17): **pending**, the user is not sure yet who can confirm grades or supply drafts; Phase 6c stays blocked on this and the evals stay at format and fixtures.
+- **A43 (amends A30, A42).** Repeat runs are opt-in via `--repeat`. Without the flag, the tie-point and A-range conditions only set the human-check flag; with it, the owners of every graded criterion run once more and the grade of record is the mean of the two runs.
