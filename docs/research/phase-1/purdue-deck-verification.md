@@ -1,4 +1,4 @@
-# Verification against the user's Purdue OWL decks (Phase 1)
+# Verification against the user-supplied style guides (Phase 1)
 
 Date: 2026-10-06. Sources supplied by the user:
 - "Chicago Manual of Style (18th Edition): Notes & Bibliography Formatting and Style Guide", Purdue OWL slide deck, 31 pages.
@@ -70,3 +70,36 @@ after a colon an error. Tag [D], section numbers unverified.
 7. CMOS 17 author-list limits; the current CMOS 18 block-quote wording.
 
 None of these changes the Phase 1 build: each stays `[U]` and the reviewer treats it as "check your style guide".
+
+---
+
+# Addendum A: Douglas College Library "MLA 9th Edition" guide (22 pages, May 2023)
+
+Supplied by the user 2026-10-06; read in full (text extracted). Tag **[DC]** = stated in this guide. It is a library
+guide, so still secondary, but it cites page numbers in the MLA Handbook, 9th ed. (written "Handbook p. N" below),
+which makes it stronger than the Purdue deck for MLA. Paraphrased; examples are not copied.
+
+## What it settles
+
+| # | Item | Result | Reviewer policy |
+|---|---|---|---|
+| A1 | DOI form in MLA (conflict C3) | **Resolved for MLA [DC]**: write a DOI as a web address starting `https://doi.org/`; if there is no DOI, use a stable link or the URL. The Purdue deck's `doi:` form is MLA 8-era. Chicago's DOI form is still open | MLA: flag a `doi:` or bare-number DOI as minor ("use the link form") |
+| A2 | Seasons in MLA 9 dates | **New [DC]**: seasons are no longer capitalised (winter 2021, not Winter 2021). The Purdue deck's "Spring 2008" is the older form | Minor, only if the essay is in MLA 9 and inconsistent |
+| A3 | "qtd. in": which source goes in Works Cited | **Settled for MLA [DC, Handbook p. 284]**: list the indirect source actually read, not the quoted one; "qtd. in" is unnecessary if the prose makes the secondhand status clear. Chicago's rule is still open | MLA: flag a Works Cited entry for a source only quoted secondhand; do not require "qtd. in" when the prose says it |
+| A4 | Translated book entry | **Confirmed [DC, Handbook pp. 146-147]**: author first, "Translated by" after the title, before the publisher | Keep (matches item 8) |
+| A5 | Original publication date for reprints | **Confirmed [DC, Handbook p. 210]**: record the date of the version consulted; the original date is optional and useful | Accept present or absent |
+| A6 | MLA block quotes | **Confirmed with page [DC, Handbook p. 254]**: up to four lines run in with double quotes; more than four lines set off, indented half an inch, no quotation marks, period before the citation | Flag only clear misses |
+| A7 | Quote exactly | **Confirmed [DC, Handbook p. 253]**: do not change spelling, capitalisation, interior punctuation, italics or accents in a quotation | Supports the integrity rule in `rules.md` |
+| A8 | URLs without "https://" | **Confirmed [DC]**: omit the protocol unless hyperlinking | Minor only |
+
+## What it complicates
+
+| # | Item | Result | Reviewer policy |
+|---|---|---|---|
+| A9 | Page-range elision (item 13) | **Now a conflict between guides**: Purdue shows elided ranges (153-68); this guide mostly shows full second numbers (326-354, 492-500) and one odd form (237-8) | Accept both; flag only an inconsistent mix within one essay |
+| A10 | Month abbreviations (item 12) | Abbreviated: Apr., Aug., Oct., Nov., Dec., and "Sept." once; May and June in full. But the guide's own entries also spell out March and November, so it is not applied consistently | Flag nothing except an obviously chaotic mix, and then as minor |
+
+## Still unconfirmed for MLA
+Plato, Aristotle and Kant numbering (the guide covers no classical works, plays or sacred texts); the translator-first
+entry; the MLA poetry-block threshold (no verse coverage).
+Net: MLA is now in good shape. The open style risks are Chicago, notably author counts, DOI form and classical works.
