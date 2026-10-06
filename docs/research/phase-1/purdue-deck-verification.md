@@ -103,3 +103,49 @@ which makes it stronger than the Purdue deck for MLA. Paraphrased; examples are 
 Plato, Aristotle and Kant numbering (the guide covers no classical works, plays or sacred texts); the translator-first
 entry; the MLA poetry-block threshold (no verse coverage).
 Net: MLA is now in good shape. The open style risks are Chicago, notably author counts, DOI form and classical works.
+
+---
+
+# Addendum B: Chicago Manual of Style, 18th edition (excerpts supplied by the user)
+
+Supplied 2026-10-06 as a text file of excerpts with CMOS 18 section numbers (14.143-14.152 classical references, 13.x authors and short forms, 14.73-14.77 articles and DOIs, 12.10-12.24 and 12.82-83 quotations, 14.160 secondary sources, ch. 10 abbreviations). Tag **[C18]** = stated in these excerpts. This is the primary source, so it overrides every earlier tag. Paraphrased; no passages are copied.
+
+## Resolves earlier conflicts
+
+| # | Item | CMOS 18 says [C18] | Verdict on earlier sources |
+|---|---|---|---|
+| B1 | Authors in a note (C1) | More than two authors or editors: name only the first, then "et al." (17th edition: more than three). No comma before "et al." in a note | Earlier research notes were right; the Purdue deck's "2-3 named" is the 17th-edition or Turabian rule |
+| B2 | Authors in the bibliography (C2) | Up to six listed; more than six: first three then "et al." (17th: up to ten listed). With no bibliography, the first full note follows the bibliography rule | Earlier research notes were right; the deck's "first six for 4-10" mixes the rules |
+| B3 | DOI form (C3), Chicago | A DOI is written as a URL appended to `https://doi.org/`; it is preferred over the address-bar URL. For print-consulted articles no URL is needed | The `doi:` form in the deck is dated: reviewer flags it as minor |
+| B4 | Block quote threshold (C4) | A hundred words or more "can generally" be set off; length usually decides, but two or more paragraphs, quoted correspondence, lists and material needing special format also qualify; comparing quotations may justify blocking short ones | Keep the soft 100-word rule. "Five lines" is a Turabian heuristic, not CMOS |
+| B5 | Access dates | Not required for formally published electronic sources; if used, they come immediately before the URL or database name, set off by commas in a note and by periods in a bibliography entry | Confirms earlier [U]/[S] |
+
+## Corrects my earlier notes
+
+| # | Item | Earlier note | CMOS 18 [C18] |
+|---|---|---|---|
+| B6 | "Quoted in" in notes-bibliography | List only the source actually read | **If the original is unavailable, both the original and the secondary source must be listed**; quoting at second hand is generally discouraged. (Author-date differs: name the original author and date in the text, and list only the secondary source.) MLA is unchanged: list the indirect source only |
+| B7 | Italics for abbreviations | Unknown | An abbreviation of a consistently italicised title is generally italicised too. A list of abbreviations is optional, useful when many are used or a few are used often, alphabetised by abbreviation, and never a substitute for the full form at first use |
+
+## Settles earlier [U] items
+
+| # | Item | Result [C18] |
+|---|---|---|
+| B8 | Original year for translations | **Confirmed**: the Manual's own sample list of abbreviations gives the year of the edition used, then the original year in square brackets, inside the parenthesis (the Purdue deck's "repr." pattern is a second, valid form). Reviewer accepts either, or neither |
+| B9 | Plato and Aristotle numbering | **Confirmed for notes**: ancient works are cited by standard divisions (for example Stephanus or Bekker numbers), which stay the same across editions and translations; page numbers are omitted except for a modern editor's introduction or notes, or for a specific translation. Details of the edition used (translator, publisher, year) are given the first time or in the bibliography. Not covered in the excerpts: Kant's A/B and Akademie numbers, and author-date handling of ancient works |
+| B10 | Ibid. for classical works | When recognised abbreviations (Oxford Classical Dictionary list) are used, they replace "ibid." in later references; abbreviations must not be used where two authors could be meant |
+| B11 | Medieval works | Cited like classical works (author, title, standard divisions); a translation adds the translator and the edition details |
+| B12 | Editor and translator in notes | "ed. and trans." and "trans. and ed." both appear, in title-page order; "ed." and "trans." are dropped in short forms |
+| B13 | Page ranges and "p." | Examples elide ranges (two-digit second numbers such as 479-96 and 371-84) and use bare page numbers with no "p." |
+| B14 | Short notes | Author surname plus a shortened title; a leading article is dropped from the short title; multiple authors follow B1 |
+| B15 | Preprints | "Preprint" is reserved for items on a preprint server; an accepted but unpublished journal article is "forthcoming"; "ahead of print" is separate, and the placement of the date differs |
+| B16 | Subscription databases | The database name may replace a very long URL |
+
+## Still unconfirmed after all sources
+1. Kant's A/B pagination and the Akademie "Ak." prefix (the excerpts cover ancient and medieval works only).
+2. Chicago author-date handling of ancient works and standard divisions.
+3. Substack and newsletter forms (analogy to blogs only).
+4. MLA and Chicago treatment of translator-first entries; MLA poetry-block threshold; MLA handling of Plato, Aristotle and Kant numbering.
+5. The exact CMOS 18 section number for abbreviating frequently cited works and for "edited and translated by" in bibliographies.
+
+Net: the Chicago side is now in good shape. The reviewer treats the remaining five items as "check your style guide".
