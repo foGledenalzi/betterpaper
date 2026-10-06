@@ -139,3 +139,16 @@ The user reviewed the most consequential assistant defaults and answered as foll
 - Quick mode (A15): **confirmed**, prints a grade with a visible banner and never caps.
 - Gold set (A17): **pending**, the user is not sure yet who can confirm grades or supply drafts; Phase 6c stays blocked on this and the evals stay at format and fixtures.
 - **A43 (amends A30, A42).** Repeat runs are opt-in via `--repeat`. Without the flag, the tie-point and A-range conditions only set the human-check flag; with it, the owners of every graded criterion run once more and the grade of record is the mean of the two runs.
+
+## Provisional decisions A44-A53 (assistant defaults from the second-pass evidence review, 2026-10-06)
+Evidence: `docs/research/phase-1/evidence-limits-round2.md` (search-result-level confirmation only; the user can override any of these).
+- **A44.** Log the model ID, prompt hash and run date with every grade; each confirmed anchor records the model version that produced its paired judgements; on a version change print an advisory notice recommending a blind re-grade of one earlier draft.
+- **A45.** A blind-versus-anchored check (grade once without earlier grades and once with them) is an eval arm, not a default step.
+- **A46.** Reviewer agreement never raises confidence by itself; added medium confidence reasons: model-version change since the anchors, and high dispersion across criteria. The note is described as a triage heuristic.
+- **A47.** Before counting a difference toward the integrity split, classify near-matches (edition or translation variant, ellipsis, bracketed alteration, OCR or conversion artefact); they never count.
+- **A48.** The precheck strips or flags zero-width and bidirectional control characters, compares visible and extracted text for PDF and docx input, and flags injection-like text; the report prints "injection-like text found".
+- **A49.** Pre-release red-team and stability studies join the evals (injections including hidden text and repeated attempts, essays that legitimately quote imperative text, repeated grading of human-graded drafts under perturbations); results are published with the model version.
+- **A50.** A grade movement of one step or less without criterion-level evidence prints as "no reliable change"; a revision-sensitivity self-test (strengthen and weaken a paragraph) joins the evals.
+- **A51.** The gold set includes a double-marked subset (more than one defensible grade is allowed), and a weight-sensitivity check against equal weights, median and minimum.
+- **A52.** The report and README say the grade is not a target to optimise.
+- **A53.** Reviewers are never told whether an essay was AI-assisted or where it came from. Known limits 18-26 are added from this review.
