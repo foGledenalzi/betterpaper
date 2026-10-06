@@ -27,7 +27,7 @@ Open defaults (confirm or override): Structure is reviewed by `argument-reviewer
 The user supplied two Purdue OWL slide decks (Chicago 18th notes-bibliography, MLA 9th). Findings are in
 `docs/research/phase-1/purdue-deck-verification.md`: 14 items strengthened, 5 conflicts with earlier notes
 (author counts in notes and bibliography, DOI form, block-quote threshold, MLA poetry), and the philosophy-specific
-items (classical-work numbering, translator-first MLA, Substack, abbreviations) still unconfirmed.
+items (classical-work numbering, translator-first MLA, newsletter-platform forms, abbreviations) still unconfirmed.
 
 ## Venue and genre (user, 2026-10-06)
 Target venue: post-graduate academic universities. Genre: argumentative with research, plus general theory. Recorded as D13 in `DECISIONS.md`.

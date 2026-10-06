@@ -59,13 +59,13 @@ after a colon an error. Tag [D], section numbers unverified.
 
 ## Still unconfirmed (no deck coverage)
 
-1. MLA and Chicago author-date handling of Plato (Stephanus), Aristotle (Bekker) and Kant (A/B) numbering. The MLA
+1. MLA and Chicago author-date handling of Plato (Stephanus), Aristotle (Bekker) and two-edition (A/B) numbering for modern classics. The MLA
    deck shows only a Bible in-text pattern (version, book, chapter:verse) and a multivolume pattern, which support
    "cite standard divisions" in general. Policy stays: never flag standard classical numbering.
 2. Chicago author-date: parenthetical form for classical works and whether the reference list needs an entry.
 3. MLA translator-first entry wording (the decks show only the author-first form).
-4. Substack short and bibliography forms; whether "quoted in" lists both sources in the bibliography.
-5. CMOS section and threshold for abbreviating frequently cited works; ATP vs TP; whether abbreviations are italic.
+4. Newsletter-platform short and bibliography forms; whether "quoted in" lists both sources in the bibliography.
+5. CMOS section and threshold for abbreviating frequently cited works; code conventions for frequently cited works; whether abbreviations are italic (CMOS 18 says generally yes for italicised titles, addendum B).
 6. "Ak." prefix convention and "edited and translated by" wording.
 7. CMOS 17 author-list limits; the current CMOS 18 block-quote wording.
 
@@ -100,7 +100,7 @@ which makes it stronger than the Purdue deck for MLA. Paraphrased; examples are 
 | A10 | Month abbreviations (item 12) | Abbreviated: Apr., Aug., Oct., Nov., Dec., and "Sept." once; May and June in full. But the guide's own entries also spell out March and November, so it is not applied consistently | Flag nothing except an obviously chaotic mix, and then as minor |
 
 ## Still unconfirmed for MLA
-Plato, Aristotle and Kant numbering (the guide covers no classical works, plays or sacred texts); the translator-first
+Plato, Aristotle and two-edition (A/B) numbering (the guide covers no classical works, plays or sacred texts); the translator-first
 entry; the MLA poetry-block threshold (no verse coverage).
 Net: MLA is now in good shape. The open style risks are Chicago, notably author counts, DOI form and classical works.
 
@@ -132,7 +132,7 @@ Supplied 2026-10-06 as a text file of excerpts with CMOS 18 section numbers (14.
 | # | Item | Result [C18] |
 |---|---|---|
 | B8 | Original year for translations | **Confirmed**: the Manual's own sample list of abbreviations gives the year of the edition used, then the original year in square brackets, inside the parenthesis (the Purdue deck's "repr." pattern is a second, valid form). Reviewer accepts either, or neither |
-| B9 | Plato and Aristotle numbering | **Confirmed for notes**: ancient works are cited by standard divisions (for example Stephanus or Bekker numbers), which stay the same across editions and translations; page numbers are omitted except for a modern editor's introduction or notes, or for a specific translation. Details of the edition used (translator, publisher, year) are given the first time or in the bibliography. Not covered in the excerpts: Kant's A/B and Akademie numbers, and author-date handling of ancient works |
+| B9 | Plato and Aristotle numbering | **Confirmed for notes**: ancient works are cited by standard divisions (for example Stephanus or Bekker numbers), which stay the same across editions and translations; page numbers are omitted except for a modern editor's introduction or notes, or for a specific translation. Details of the edition used (translator, publisher, year) are given the first time or in the bibliography. Not covered in the excerpts: two-edition (A/B) and academy-edition numbers for modern classics, and author-date handling of ancient works |
 | B10 | Ibid. for classical works | When recognised abbreviations (Oxford Classical Dictionary list) are used, they replace "ibid." in later references; abbreviations must not be used where two authors could be meant |
 | B11 | Medieval works | Cited like classical works (author, title, standard divisions); a translation adds the translator and the edition details |
 | B12 | Editor and translator in notes | "ed. and trans." and "trans. and ed." both appear, in title-page order; "ed." and "trans." are dropped in short forms |
@@ -142,10 +142,10 @@ Supplied 2026-10-06 as a text file of excerpts with CMOS 18 section numbers (14.
 | B16 | Subscription databases | The database name may replace a very long URL |
 
 ## Still unconfirmed after all sources
-1. Kant's A/B pagination and the Akademie "Ak." prefix (the excerpts cover ancient and medieval works only).
+1. Two-edition (A/B) pagination and the academy-edition "Ak." prefix for modern classics (the excerpts cover ancient and medieval works only).
 2. Chicago author-date handling of ancient works and standard divisions.
-3. Substack and newsletter forms (analogy to blogs only).
-4. MLA and Chicago treatment of translator-first entries; MLA poetry-block threshold; MLA handling of Plato, Aristotle and Kant numbering.
+3. Newsletter-platform forms (analogy to blogs only).
+4. MLA and Chicago treatment of translator-first entries; MLA poetry-block threshold; MLA handling of Plato, Aristotle and two-edition (A/B) numbering.
 5. The exact CMOS 18 section number for abbreviating frequently cited works and for "edited and translated by" in bibliographies.
 
 Net: the Chicago side is now in good shape. The reviewer treats the remaining five items as "check your style guide".

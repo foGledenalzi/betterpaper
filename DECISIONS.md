@@ -124,3 +124,6 @@ Fill gaps and amend earlier provisional decisions; the user can override any of 
 
 ## Provisional decision A42 (assistant default from round 3, 2026-10-06)
 - **A42 (amends A30, A35).** The repeat rule fires when the overall weighted mean lies within 0.05 points of a tie point (the midpoint between two adjacent steps) or the result is in the A range, and it re-runs the owners of every graded criterion (cost logged). The demo workspace holds state up to draft 2; its third draft is a separate file that the grade skill saves as draft 3. TRANSPOSED is a status, not a flag. Round-3 review (six lenses plus skeptic verification) found no remaining blocker or major.
+
+## Research-note swap (2026-10-06)
+At the user's request the public research notes were rewritten with invented works in place of examples tied to the author's own subject matter: the two-author translated-work and abbreviation example, the two-edition (A/B) pagination example, the newsletter-platform example, and a theory-fiction source that is out of scope under D14. Conventions are described generically; style-rule tags and confidence levels are unchanged.

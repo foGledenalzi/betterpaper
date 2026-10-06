@@ -79,8 +79,8 @@ editions will repeat the name in full and accepts either now. [MLA accessibility
 
 - Confirmed general MLA rule: for works in many editions, give your edition's page, a semicolon, then the division (ch., bk., pt.);
   for verse and plays use period-separated divisions. [Purdue basics](https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_in_text_citations_the_basics.html)
-- Plato (Stephanus), Aristotle (Bekker), Kant (A/B): no official MLA page naming these was found. UNCONFIRMED as MLA policy.
-  Philosophy-writing practice (not MLA-specific): (Plato, *Republic* 514a); (Aristotle, *Nicomachean Ethics* 1094a1-5); (Kant, *Critique* A51/B75).
+- Plato (Stephanus), Aristotle (Bekker), and modern classics with two-edition pagination (A/B): no official MLA page naming these was found. UNCONFIRMED as MLA policy.
+  Philosophy-writing practice (not MLA-specific): (Plato, *Republic* 514a); (Aristotle, *Nicomachean Ethics* 1094a1-5); (Hartwell, *Treatise on Idle Reason* A51/B75; an invented work).
   Standard-number background: [Proofed on Stephanus/Bekker](https://proofed.com/writing-tips/citing-plato-and-aristotle-stephanus-and-bekker-numbers/).
 - Reviewer policy to propose: do NOT flag standard numbering in place of page numbers when the Works Cited entry names the translation used.
   DO flag a missing Works Cited entry (MLA always lists the edition or translation consulted). Do not flag the "a/b" letters as a page-format error.
@@ -178,7 +178,7 @@ Same-author entries are in chronological order.
 - Plato (Stephanus): (Plato, *Republic* 514a) or with book: (Plato, *Republic* 7.514a). Aristotle (Bekker): (Aristotle, *Metaphysics* 11.9.1065b5-15).
   These come from guide summaries of the standard numbering ([Proofed](https://proofed.com/writing-tips/citing-plato-and-aristotle-stephanus-and-bekker-numbers/)).
   The exact author-date parenthetical pattern is UNCONFIRMED against CMOS text.
-- Kant A/B: no Chicago source found. UNCONFIRMED. Discipline practice: (Kant, *Critique of Pure Reason* A51/B75), A = 1781, B = 1787.
+- Two-edition (A/B) pagination: no Chicago source found. UNCONFIRMED. Discipline practice, with an invented work: (Hartwell, *Treatise on Idle Reason* A51/B75), A = first edition, B = second edition.
 - Reference list: guides indicate a list entry names the edition or translation used. Whether author-date requires one for classics cited
   only by standard numbers is UNCONFIRMED. Variant (Plato 1992, 514a) with the translation's date is plausible but UNCONFIRMED.
 - Reviewer policy to propose: do not flag a missing list entry when only standard divisions are cited; flag when modern-edition page numbers
@@ -234,7 +234,7 @@ Fast detection rules for a reviewer:
 
 # UNCONFIRMED summary (do not hard-code without checking)
 
-1. Official MLA treatment of Stephanus, Bekker and Kant A/B numbers (only the general page-plus-division rule is confirmed).
+1. Official MLA treatment of Stephanus, Bekker and two-edition (A/B) numbers (only the general page-plus-division rule is confirmed).
 2. Official Chicago author-date treatment of classics: parenthetical pattern, reference-list requirement, CMOS 18 section numbers.
 3. Whether CMOS prescribes an original-publication year for translations (the reprint pattern (1893) 1967 is confirmed).
 4. MLA translator-first entry wording; MLA month abbreviations; MLA page-range abbreviation rule (full numbers used above).
