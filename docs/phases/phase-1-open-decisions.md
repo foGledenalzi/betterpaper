@@ -48,5 +48,5 @@ Evidence: `docs/research/phase-1/grading-literature-synthesis.md` (12 papers) an
 
 | # | Question | Recommended default | Why |
 |---|---|---|---|
-| 21 | Ship self-tests | Style-perturbation and prompt-injection fixtures ship in `evals/` for development; users can run them | Prompt instructions alone did not stop style or injection effects in two studies |
+| 21 | Ship self-tests | Style-perturbation and prompt-injection fixtures ship in `evals/` for development; users can run them | In one study explicit instructions did not prevent style penalties (no no-instruction control); in another, one appended sentence raised scores (no defence tested) |
 | 22 | Gold set | Build a small human-graded set (your own drafts plus any consenting others), with several near the top band, as the basis for the panel-versus-single and severity tests | Without it the plugin's accuracy claims cannot be tested |
