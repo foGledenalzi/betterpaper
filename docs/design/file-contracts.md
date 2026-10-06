@@ -9,7 +9,7 @@ title: <essay title>
 genre: argumentative | theoretical | other        # other triggers the out-of-scope warning
 venue: <text>
 harshness: harsh | neutral                         # rules in the method digest, section 2
-style: chicago-notes | chicago-author-date | mla   # maps to the style file of the same name
+style: chicago-notes | chicago-author-date | mla | links   # maps to the style file of the same name (links is web-links.md)
 weight_primary: 1
 weight_argument: 1
 weight_structure: 1
@@ -107,6 +107,7 @@ All Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input.
 - `check_cited_spans.py <draft> <findings...>`: checks the Draft quote column and the ledger string field (Locator is navigation only) after normalising whitespace, punctuation and hyphenation; failures are dropped or marked "paraphrase, not a quotation".
 - `compute_grade.py <RUBRIC.md> <grades.json>`: as section 2, with exact arithmetic.
 - `select_anchors.py <workspace> --reviewer <name>`: selects up to `anchor_count` confirmed anchors spanning the scale (at least one top-band and one low-band where confirmed ones exist), excludes the draft under review and near-duplicates (`near_duplicate_pct`), orders by sha1(seed|reviewer|anchor id), prints `anchors: N (M near the top band)`.
+- `import_draft.py <input> [--out <path>]`: `.docx` by `zipfile` and `xml.etree` only: paragraphs in order, headings from heading styles, emphasis as `*...*` and `**...**`, hyperlinks as `[text](url)`, footnotes and endnotes as `[^n]` markers (numbered in document order) with definitions appended at the end, quote-styled paragraphs as blockquotes, tables and images replaced by `[table omitted]` and `[image omitted]`, tracked insertions kept and deletions dropped; text with the hidden property (`w:vanish`) is dropped and reported as a warning because it is an injection route. `.html` or `.htm` by `html.parser`: article body, headings, emphasis, links and footnote markers, with scripts, styles and navigation dropped. `.txt` and `.md` are copied with LF line endings. Anything else exits 2. Prints `paragraphs: N, notes: M, links: L, warnings: W` and writes only to `--out` (default: standard output). Warnings never change the exit code.
 - `report_lint.py <review> <draft>`: paste test, replacement-wording flags, missing labels, reviewer coinages in quotation marks, non-neutral headings, verdict length, free-hand recurrence words, missing header or footer.
 - `evals/eval_metrics.py`: weighted kappa or QWK, exact and adjacent agreement per band, signed bias per band, MAE, spread, per-criterion agreement, repeat-run spread, cap events and checker false positives.
 
@@ -118,7 +119,7 @@ All Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input.
 
 ## 8. Style files
 
-Every rule carries one tag: `[C18]` CMOS 18 excerpt; `[MLA9]` MLA Handbook, 9th edition: a passage read in a supplied excerpt, or a page cited through a library guide; `[DC]` that library guide; `[D]` Purdue deck; `[S]` search summary; `[U]` unconfirmed (never an error). Each style file defines the tag set at its top. Worked examples use invented works and invented pages.
+Every rule carries one tag: `[C18]` CMOS 18 excerpt; `[MLA9]` MLA Handbook, 9th edition: a passage read in a supplied excerpt, or a page cited through a library guide; `[DC]` that library guide; `[D]` Purdue deck; `[S]` search summary; `[U]` unconfirmed (never an error); `[H]` house rule the plugin defines itself (used only by the links style, where no manual governs). Each style file defines the tag set at its top. Worked examples use invented works and invented pages.
 
 ## 9. Filler list grammar
 
@@ -126,4 +127,18 @@ One lowercase phrase per line; `#` starts a comment; a trailing `?` marks a cond
 
 ## 10. Demo inventory and answer key
 
-`plugins/betterpaper/demo/`: `RUBRIC.md`, `STATE.md`, `SOURCES.md`; `drafts/draft-1.md` and `draft-2.md` (the workspace holds state up to draft 2) plus `draft-3-to-grade.md` kept outside `drafts/` until graded, so the grade skill saves it as draft 3; `reviews/draft-1.md` (an invented earlier review that quotes wording later copied into a draft); `feedback/` (one invented third-party comment); `sources/` (public-domain excerpts, plus a different-edition control and a catalogue-page control); `anchors/` with 3-4 invented confirmed anchors; `findings-fabricated.md` (for the cited-span test); `report-sample.md` (for the lint); `grades-cases.json` (tie under harsh and neutral, cap, conditional cell, partial grading, verified-strength limit); `ANSWER-KEY.md` (expected status per quotation; tracker transitions per draft; recurrence tags printed; grades per criterion; lint result; which rows must not cap). Each planted defect in the plan's matrix maps to exactly one file and one expected result.
+`plugins/betterpaper/demo/`: `RUBRIC.md`, `STATE.md`, `SOURCES.md`; `drafts/draft-1.md` and `draft-2.md` (the workspace holds state up to draft 2) plus `draft-3-to-grade.md` kept outside `drafts/` until graded, so the grade skill saves it as draft 3; `reviews/draft-1.md` (an invented earlier review that quotes wording later copied into a draft); `feedback/` (one invented third-party comment); `sources/` (invented excerpts of an invented treatise in two invented editions, which gives the different-edition control, plus a catalogue-page control); `anchors/` with 3-4 invented confirmed anchors; `findings-fabricated.md` (for the cited-span test); `report-sample.md` (for the lint); `grades-cases.json` (tie under harsh and neutral, cap, conditional cell, partial grading, verified-strength limit); `ANSWER-KEY.md` (expected status per quotation; tracker transitions per draft; recurrence tags printed; grades per criterion; lint result; which rows must not cap). Each planted defect in the plan's matrix maps to exactly one file and one expected result.
+
+## 11. Workspace file blocks (`STATE.md`, `SOURCES.md`)
+
+Human-facing parts are Markdown tables; write a literal pipe in a table cell as `\|`. The tracker and the two ledgers are fenced blocks whose info string is `jsonl` plus the block name. Each line is one JSON object (UTF-8, no trailing commas, `null` for a missing value). Edit a row by replacing its whole line, matched by its ID or QID; never reflow a line. A line that does not parse stops the run and names the file and line number.
+
+| Block | File | Keys, in this order |
+|---|---|---|
+| `jsonl tracker` | `STATE.md` | id, category, subtype, tier, diagnosis, anchor, instances, first_seen, first_flagged, rounds_flagged, drafts_present, last_seen, status, author_claim, claim_scope, verified_status, origin, thread, follow_up_of, evidence_level, checked_against, confidence, display_group, severity_history |
+| `jsonl quotations` | `SOURCES.md` | qid, draft, locator, string, attributed_to, work_edition, source_id, status, flags, label, checked_against, evidence_level, round_verified, rounds_open |
+| `jsonl citations` | `STATE.md` | work, edition_used, chapter_page_pairs, completeness_gaps, date_pairs, placeholders, title_formats |
+
+- The quotations block uses the same `string` key as the source-verifier's ledger block, so `check_cited_spans.py` reads either. The verifier's extra keys (counter_passage, diff_type, provenance_tests, trigger, reason) go to the cap event log, not into this block.
+- Reviewers receive only the visible tracker keys of section 4 (id, category, subtype, tier, diagnosis, anchor, and a bare re-verify flag); the orchestrator strips the rest before building an extract.
+- Everything else stays a table: grade history, anchors register, anchor-order log, token and cost log, PATTERNS, suggestions and rescue logs, archive and `reviewer_wording`, corrections log, risk register, keep and commitments lists, and in `SOURCES.md` the OPENED and RECOMMENDED tables and the precedent register.
