@@ -94,3 +94,6 @@ Made while resolving the adversarial plan review. They fill gaps the accepted de
 - **A20** Paths use `${CLAUDE_PLUGIN_ROOT}`.
 - **A21** `voice-echo-reviewer` has `Read, Grep` only; no agent has Bash; web queries contain only attributed quotations or public work details.
 - **A22** Privacy: denylist outside the repo; `tools/privacy-scan.sh` in the Verify steps and as a pre-push hook; shipped reference, skill and agent files contain no D, R or A codes; `DECISIONS.md` is development-only.
+
+## D16: Git history exposure accepted (2026-10-06)
+The repo is public. Early commits (before 2026-10-06 remediation) contain an example grade pair, one line of review wording and a few anecdotal statements derived from private reviews. The current tree is clean (`tools/privacy-scan.sh`). The user decided to leave history as it is ("not a huge deal"), so there is no rewrite, no force-push and no switch to private. Consequences: the Phase 8 history scan (`tools/privacy-scan.sh --history`) is expected to report only those known early lines; any other hit, and any new leak in the tree, still blocks release.
