@@ -57,8 +57,12 @@ band had only three essays.
   caps can depress strong work, so apply the cap only for quotation integrity, never for a
   single mechanics or structure flaw, and show both grades.
 - Treat A-range grades as provisional and say how many anchors sit near the top band.
-- The Content/Structure/Language split, with each specialist told what to ignore, supports the
-  reviewer split. Our adjudication should not be a simple minimum or cap.
+- The Content/Structure/Language split in the paper is one design that did better on weak essays
+  (score 1: 73.3% vs 46.7% exact match; score 2: 65.8% vs 55.0%, few-shot, Table 2), only
+  marginally better overall (QWK 0.7453 vs 0.7165), and marginally worse on mid-range essays
+  (scores 3-4), at four times the calls. It does not show that five fresh-context reviewers are
+  more accurate than one grader; see grading-literature-synthesis.md. Our adjudication should not
+  be a simple minimum or cap.
 
 ## Patterns to adopt
 

@@ -34,3 +34,6 @@ Target venue: post-graduate academic universities. Genre: argumentative with res
 
 ## Scope correction (user, 2026-10-06)
 Theory-fiction is not within scope. Recorded as D14 in `DECISIONS.md`, with the list of plan files it changes.
+
+## Literature received and synthesised (2026-10-06)
+Eleven further arXiv papers were read and cross-checked; results in `docs/research/phase-1/grading-literature-synthesis.md` (evidence per design decision, figures safe to cite, claims to avoid, 18 suggested design changes, 9 open questions). Main effect on the plan: anchors stay (direction supported, not a forecast); the panel is justified as diagnostic structure, not as more accurate; the default weights, the harsh default and the confidence flag have no direct support and become eval arms; the integrity cap should fire only on a checked-and-mismatched quotation.
