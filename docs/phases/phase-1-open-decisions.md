@@ -8,7 +8,7 @@ Evidence: `docs/research/phase-1/grading-literature-synthesis.md` (12 papers) an
 
 | # | Question | Recommended default | Why |
 |---|---|---|---|
-| 1 | Default criterion weights | Equal weights, editable in `RUBRIC.md` | Equal weights reproduce all three real overall grades; the earlier 25/25/20/10/10/10 comes out one step low on two. No paper tests weighting |
+| 1 | Default criterion weights | Equal weights, editable in `RUBRIC.md` | Equal weights match how the tool aggregated its own criterion grades in three earlier reviews (the grades were tool-assigned, so this is consistency, not human-validated accuracy); the earlier 25/25/20/10/10/10 comes out one step low on two. No paper tests weighting |
 | 2 | Who reviews Originality | `argument-reviewer` (with Argument and Structure); `primary-text-reviewer` supplies unacknowledged precedents | The plan assigned every criterion except this one |
 | 3 | Structure row | Keep it, flagged "low confidence: not calibrated", kept within one notch of Argument unless two structure-specific findings justify more; findings never counted twice | The real reviews never graded it, and adding it at equal weight moves one grade a step |
 | 4 | Anchor grades | Human-confirmed (you or an instructor); tool-assigned grades are marked unconfirmed and cannot anchor | Literature warns against tool-assigned anchors |

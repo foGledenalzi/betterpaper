@@ -126,7 +126,7 @@ Repo, manifests, `.gitignore`, MIT licence, `DECISIONS.md`. `claude plugin valid
 Under `skills/grade/references/`. Each file under 200 lines and readable alone. `SKILL.md` stays under 500 lines by linking to them.
 
 ### 1.1 `grade-bands.md`
-Six criteria graded A to F with plus and minus; scale A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, C-=1.7, D+=1.3, D=1.0, D-=0.7, F=0. For each criterion give observable descriptors for A, B, C, D, F, a definition, whether it is judged on a part or the whole, and a near-miss example. Tag each descriptor `[observed]`, `[derived]` or `[extrapolated]` and state where evidence is thin.
+Six criteria graded A to F with plus and minus; scale A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, C-=1.7, D+=1.3, D=1.0, D-=0.7, F=0. For each criterion give observable descriptors for A, B, C, D, F, a definition, whether it is judged on a part or the whole, and a near-miss example. Tag each descriptor `[observed]`, `[derived]` or `[extrapolated]` and state where evidence is thin. `[observed]` means seen in earlier tool-assigned reviews that no human has confirmed (D15): it is calibration evidence, not ground truth.
 
 | Criterion | Reviewer | Note |
 |---|---|---|
@@ -182,7 +182,7 @@ Phrase-level padding list (grep-able, one per line), feeding Mechanics; includes
 Docs: <https://code.claude.com/docs/en/skills.md>.
 
 1. `skills/init/SKILL.md`: `name: init`, `argument-hint: "<essay-slug>"`, `disable-model-invocation: true`.
-2. Body: create `betterpaper/$ARGUMENTS/`, copy templates from `${CLAUDE_SKILL_DIR}/templates/`, then interview the user: title; genre (argumentative research essay, theoretical or conceptual essay, other: triggers the D14 warning); venue; harshness (default harsh, R6); citation style (default Chicago notes-bibliography); weights (default equal, R1); declared context for positioning flags (R16); primary texts and editions; and which graded earlier drafts exist and **who confirmed each grade** (R4).
+2. Body: create `betterpaper/$ARGUMENTS/`, copy templates from `${CLAUDE_SKILL_DIR}/templates/`, then interview the user: title; genre (argumentative research essay, theoretical or conceptual essay, other: triggers the D14 warning); venue; harshness (default harsh, R6); citation style (default Chicago notes-bibliography); weights (default equal, R1); declared context for positioning flags (R16); primary texts and editions; and which graded earlier drafts exist and **who confirmed each grade** (R4); where the answer is "the tool", generate an anchor confirmation sheet (criterion grades with confirm and adjust columns) for the author or an instructor.
 3. Templates:
    - `RUBRIC.md`: criteria, weights, genre, harshness, style, declared context, model note.
    - `STATE.md`: thesis, grade history (previous value shown), **anchors register**, **issue tracker** (ID, category, issue, first flagged, drafts present, rounds flagged, status in {OPEN, PARTIAL, RECURRING, REGRESSED, RESOLVED, WITHDRAWN, SUPERSEDED, CANNOT-CHECK}, author claim, last seen ≤15 words), notes for the next review (R14, R15).
@@ -259,9 +259,9 @@ Python 3, standard library only; Markdown to stdout; each with `test_*.py` runna
 Runs in the user's **private writing folder**, never in this repo; essay-specific notes live in the git-ignored `betterpaper/_private/`.
 
 1. `/betterpaper:init <slug>`.
-2. Copy earlier drafts and reviews into `anchors/`. Ask who confirmed each grade; mark unconfirmed ones as such, and do not use them as anchors until confirmed (R4).
+2. Copy earlier drafts and reviews into `anchors/`. The reference grades were assigned by the tool, not a human (D15), so every ANCHOR record starts as `unconfirmed`. Generate the confirmation sheet; the author or an instructor confirms or adjusts each criterion grade. Only confirmed records serve as anchors (R4). Adjusted grades replace the tool's in the `STATE.md` history, marked `human-adjusted`.
 3. Seed `STATE.md` with the grade history and recurring issues, with both counters; seed `SOURCES.md` with known quotation statuses and flags.
-4. **Blind calibration test** in a fresh session: temporarily remove the latest draft's review from `anchors/` and grade that draft. Pass criteria: triggers the integrity split and detects every known load-bearing quotation mismatch; the "alone" grade is within one step of the reference; flags at least 80% of recurring proofreading items; reports confidence and the human-check flag. If it fails, adjust references or briefs and re-run; restore the anchor afterwards.
+4. **Blind calibration test** in a fresh session: temporarily remove the latest draft's review from `anchors/` and grade that draft. *Objective checks* (valid now, because they can be verified against the real texts): the integrity split triggers and every known load-bearing quotation mismatch is detected with its evidence; at least 80% of recurring proofreading items are flagged; confidence and the human-check flag are shown. *Grade check*: while the reference grades are unconfirmed, comparing the "alone" grade (within one step) measures only self-consistency with the earlier tool grades, and the report must say so; once a human confirms or adjusts the grades, the draft becomes a gold-set case (R22) and the comparison counts as accuracy evidence. If a check fails, adjust references or briefs and re-run; restore the anchor afterwards.
 
 ---
 

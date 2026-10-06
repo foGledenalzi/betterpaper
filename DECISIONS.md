@@ -63,3 +63,10 @@ The user accepted all 22 recommended defaults in `docs/phases/phase-1-open-decis
 
 ## Style rules settled by the supplied Manual and handbook excerpts (2026-10-06)
 See `docs/research/phase-1/purdue-deck-verification.md` (addenda A and B). Notable: CMOS 18 notes name only the first of more than two authors; bibliography lists up to six (more than six: first three plus "et al."); DOIs are `https://doi.org/` links; block quotations are a soft 100-word rule; in notes-bibliography style a "quoted in" citation lists both original and secondary source; ancient works are cited by standard divisions with no page numbers.
+
+## D15: Reference grades are tool-assigned (2026-10-06)
+The user confirmed that the grades in the three real earlier reviews were Claude's own, not a human grader's. Consequences:
+- Every anchor derived from them starts `unconfirmed` and cannot anchor a grade until the author or an instructor confirms or adjusts it (R4); a confirmation sheet is generated for that purpose.
+- Grade descriptors tagged `[observed]` in `grade-bands.md` mean "seen in earlier unconfirmed reviews".
+- The Phase 7 grade comparison measures self-consistency, not accuracy, until a human confirms the grades; the objective checks (quotation mismatches, recurring proofreading items) are unaffected.
+- **Correction to the R1 rationale.** The statement that equal weights "reproduce all three real overall grades" only shows that equal weights match how the tool aggregated its own criterion grades. It is not evidence that equal weights match a human grader. R1 stays as accepted (equal weights, editable) and is tested in the gold-set evaluation once human grades exist.
