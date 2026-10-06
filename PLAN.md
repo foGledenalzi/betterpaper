@@ -2,7 +2,7 @@
 
 > **For the agent executing this plan.** Work phase by phase. Each phase has three subphases in order: **Q&A** (record decisions in `docs/phases/phase-N-discussion.md`), **agentic research** (notes in `docs/research/phase-N/`), then **build**. Finish every build task, run its **Verify** checks (including the privacy scan), show the user the result, then commit and push to `main` (push after every meaningful change, not only at phase ends). Where this plan names a Claude Code file format, flag or command, confirm it against the official docs linked in the phase; if a doc contradicts this plan, follow the doc and note it in `CHANGELOG.md`. Ask the user only where a decision is not already in `DECISIONS.md`.
 >
-> **Inputs.** `DECISIONS.md` (D1-D16, R1-R22, A1-A40) is the single source of truth for decisions. `docs/design/method-digest.md` holds the detailed requirements for the reference files, templates, agent briefs and scripts, and `docs/design/file-contracts.md` holds formats, schemas, tables and small rules; Phases 1-5 build from both. `docs/research/phase-1/` holds the evidence and the verified style rules. Private source material (earlier reviews, essay drafts, the denylist) lives **outside the repository** in `../betterpaper-private/` and is never read into a tracked file.
+> **Inputs.** `DECISIONS.md` (D1-D16, R1-R22, A1-A41) is the single source of truth for decisions. `docs/design/method-digest.md` holds the detailed requirements for the reference files, templates, agent briefs and scripts, and `docs/design/file-contracts.md` holds formats, schemas, tables and small rules; Phases 1-5 build from both. `docs/research/phase-1/` holds the evidence and the verified style rules. Private source material (earlier reviews, essay drafts, the denylist) lives **outside the repository** in `../betterpaper-private/` and is never read into a tracked file.
 
 **What changed from revision 1.** Names; six criteria; argumentative and theoretical academic writing only; three citation styles; human-confirmed anchors; a narrower integrity cap; reviewer waves with a verification step between them; six deterministic scripts plus an eval-metrics tool; an adjudication file with worked examples; confidence and human-check flags; an allow/deny matrix for the author's words; a demo built early; a committed privacy hook; a private gold set; Phase 7 kept generic.
 
@@ -53,7 +53,7 @@ Full notes: `docs/research/phase-1/` (`llm-grading-evidence.md`, `grading-litera
 | D12 | Style-rule sources | Built only after the user's source material is ingested (done); `[U]` rules are never errors |
 | D13, D14 | Venue and scope | Post-graduate; argument with research plus general theory; **theory-fiction out of scope** |
 | D15 | Reference grades | Tool-assigned, so unconfirmed (R4) |
-| R1-R22, A1-A40 | Sheet and assistant defaults | See `DECISIONS.md` |
+| R1-R22, A1-A41 | Sheet and assistant defaults | See `DECISIONS.md` |
 
 ---
 
@@ -229,7 +229,7 @@ Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input; eac
 4. **Adjudicate.** Verify wave-2 precedent candidates; test the integrity cap per quotation (decision table) and log it; merge findings by the digest rule; record the holistic letter grade, then run `compute_grade.py`; set the disagreement signal; run the repeat set if the repeat rule fires and re-run `compute_grade.py` on the mean; update the tracker (two counters, markers verified not trusted, completeness invariant); compare provisional grades with anchors and explain any gap of more than one step; set confidence and flags.
 5. **Report.** Write `reviews/draft-N.md` per the template; run the echo script on the report's own text; run `report_lint.py`; append the grade-history column; write `anchors/draft-N/` with `confirmed_by: unconfirmed` and refresh `CONFIRM.md`; print a five-line chat summary and the report path.
 
-**Verify.** `/betterpaper:grade demo-essay <demo draft 3>` yields the full report, updates `STATE.md` and `SOURCES.md`, and matches `ANSWER-KEY.md`: the split fires on the planted case, does not fire on the minor-defects draft or any negative control, tags print from stored counters, the lint passes; quick mode on the same draft prints the banner and never caps. **Commit and push.**
+**Verify.** `/betterpaper:grade demo-essay <the demo's third draft file, kept outside `drafts/` until graded>` yields the full report, updates `STATE.md` and `SOURCES.md`, and matches `ANSWER-KEY.md`: the split fires on the planted case, does not fire on the minor-defects draft or any negative control, tags print from stored counters, the lint passes; quick mode on the same draft prints the banner and never caps. **Commit and push.**
 
 ---
 
