@@ -22,3 +22,9 @@ Open defaults (confirm or override): Structure is reviewed by `argument-reviewer
 ## Research status
 - `llm-grading-evidence.md`: paper read in full from the user's PDF; figures corrected.
 - `chicago-notes-research.md`, `mla-author-date-research.md`, `rubric-conventions.md`: written from search summaries only (official pages were blocked by the egress proxy); unverified items are tagged.
+
+## Sources received (2026-10-06)
+The user supplied two Purdue OWL slide decks (Chicago 18th notes-bibliography, MLA 9th). Findings are in
+`docs/research/phase-1/purdue-deck-verification.md`: 14 items strengthened, 5 conflicts with earlier notes
+(author counts in notes and bibliography, DOI form, block-quote threshold, MLA poetry), and the philosophy-specific
+items (classical-work numbering, translator-first MLA, Substack, abbreviations) still unconfirmed.
