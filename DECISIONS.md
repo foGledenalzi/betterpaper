@@ -29,3 +29,9 @@ Other choices
 - **D11: Padding.** Phrase-level filler (the filler list) counts under Mechanics; paragraph-level padding counts under Structure.
 - **D12: Phase 1 timing.** The Phase 1 build waits for the user's CMOS 18 and MLA 9 source material, so unconfirmed style rules (`[U]`) can be cleared before writing. If none arrives, the files ship with `[S]`/`[U]` tags and the reviewer flags `[U]` items as "check your style guide", never as errors.
 - **D13: Target venue and genre (2026-10-06).** Post-graduate academic university level. Essays lean argumentative with research, plus general theory. Consequences: default harshness stays "harsh"; the default rubric targets argumentative research writing (the weakest-supported case is theory-fiction, which the rubric agent found no validated rubric for, so it is handled by a declared-mode rule rather than its own bands); research and source use carry full weight; Chicago notes-bibliography remains the default citation style, with MLA and Chicago author-date available.
+- **D14: Theory-fiction is out of scope (2026-10-06).** Amends D13. The plugin grades argumentative and theoretical academic writing only. Consequences for the plan:
+  - `rules.md`: the line "distinguish the genre (argument or theory-fiction)" becomes "grade as argumentative or theoretical academic writing; if the essay is something else, say so once and grade it as an argument, flagged as outside the tool's design".
+  - `grade-bands.md`: no declared-mode rule and no experimental-genre handling.
+  - `init` interview: genre options are argumentative research essay, theoretical or conceptual essay, or other (which triggers the out-of-scope warning).
+  - Phase 7: a "stuck between genres" finding in an early review becomes a plain "choose one genre" step; for this tool the answer is always argument.
+  - The rubric research gap about experimental writing no longer matters.

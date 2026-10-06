@@ -31,3 +31,6 @@ items (classical-work numbering, translator-first MLA, Substack, abbreviations) 
 
 ## Venue and genre (user, 2026-10-06)
 Target venue: post-graduate academic universities. Genre: argumentative with research, plus general theory. Recorded as D13 in `DECISIONS.md`.
+
+## Scope correction (user, 2026-10-06)
+Theory-fiction is not within scope. Recorded as D14 in `DECISIONS.md`, with the list of plan files it changes.
