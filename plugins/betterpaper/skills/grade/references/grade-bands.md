@@ -11,7 +11,7 @@ Weights and harshness sit in RUBRIC.md, grade history and open issues in STATE.m
 | Points | 4.0 | 3.7 | 3.3 | 3.0 | 2.7 | 2.3 | 2.0 | 1.7 | 1.3 | 1.0 | 0.7 | 0 |
 
 - A **step** is one rung of this scale (B to B- is one step). A **band** is a letter grade spanning its plus and minus steps: A band = A, A-; B band = B+, B, B-; C band = C+, C, C-; D band = D+, D, D-; F band = F. There is no A+.
-- The **top band** is the A range (A and A-). Print results in or near it as a band with the sentence "this grade may be too high or too low", and set the human-check flag (a report line asking a person to review the grade; rules in adjudication.md).
+- The **top band** is the A range (A and A-); **near** it means B+. Print a result in or near it (A, A- or B+) as its step with its band and the sentence "this grade may be too high or too low". The human-check flag (a report line asking a person to review the grade) is set for A and A- only; adjudication.md holds its rules.
 - **Partial grading.** Weights are relative integers set in RUBRIC.md. When a criterion has no grade (its owner returned no usable evidence, or an imported earlier record never graded it), weights renormalise over the graded criteria only: overall = sum of (weight x points) over graded criteria, divided by the sum of those weights. Print n/a in that criterion's cell, mark the overall partial and leave it out of top-band counts. Never fill the gap with another criterion's grade.
 
 ## 2. Placing a grade, then plus or minus
@@ -24,7 +24,7 @@ Place each criterion in the highest band whose descriptors the text meets (the A
 | plus | plain, and the criterion also shows a verified strength described in the band above (cite its descriptor ID) |
 | minus | one descriptor is only barely met, or one named weakness of the band below shows (cite its descriptor ID) |
 
-A **verified strength** is a reviewer-listed positive, tagged to a descriptor ID in this file, with a draft quote of 15 words or fewer that passes the cited-span check (a script confirms the quote appears in the draft) and is not contradicted by a problem on the same passage; adjudication.md holds the full definition and the number required for B+ or above under each harshness setting (harsh or neutral, set in RUBRIC.md).
+A **verified strength** is a reviewer-listed positive, tagged to a descriptor ID in this file and checked as adjudication.md defines (a draft quote of 15 words or fewer that a script confirms; no problem on the same passage). That file also sets how many are needed for B+ or above under each harshness setting (harsh or neutral, set in RUBRIC.md).
 
 "Barely met" means the descriptor holds only if the reader supplies one missing step or reads one passage generously: name that passage. The A band has no plus (A- is its minus); F has neither mark.
 
@@ -188,7 +188,7 @@ Every descriptor names something a reader can point to: quote it (15 words or fe
 
 ## 5. Calibration guards
 
-- Cite the cue behind every row change (a changed grade in a criterion's row of the report's rubric table): name the descriptor ID and give a draft quote or locator. Justify in writing any move of more than three steps.
-- Never use problem counts or list length as a proxy for a grade. A long list of minor items can leave a criterion in its band, and a single defect that a descriptor names can place it lower.
-- Compare each provisional grade with the nearest confirmed anchors above and below, quoting a passage, and explain any gap of more than one step. Where confirmed anchors give no coverage for a cell, the report prints a calibration note.
-- Structure differs: no confirmed anchor ever covers it, so grade it only from findings the argument-reviewer tags Structure, keep it within one step of Argument unless two structure-specific findings justify more, carry low confidence, and print the calibration note beside it every time.
+adjudication.md holds the guards (the cue behind every row change, comparison with the nearest confirmed anchors, the calibration note). Here:
+- Cite a descriptor ID, with a draft quote or locator, for every row change (a changed grade in a criterion's row of the report's rubric table).
+- A long list of minor items can leave a criterion in its band, and a single defect that a descriptor names can place it lower.
+- Structure follows the rules in 4.3: no confirmed anchor ever covers it, so it carries low confidence and a calibration note beside it every time.

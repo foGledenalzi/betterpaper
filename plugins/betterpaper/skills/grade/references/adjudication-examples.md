@@ -2,7 +2,7 @@
 
 Every essay, work, quotation, page number and error below is invented. Each number was computed with exact fractions, and `compute_grade.py` must reproduce each result exactly. See adjudication.md for the rules these examples apply. Scale in tenths: A 40, A- 37, B+ 33, B 30, B- 27, C+ 23, C 20, C- 17, D+ 13, D 10, D- 7, F 0. Tie points (midpoints, in tenths): A/A- 38.5, A-/B+ 35, B+/B 31.5, B/B- 28.5, B-/C+ 25, C+/C 21.5, C/C- 18.5, C-/D+ 15, D+/D 11.5, D/D- 8.5, D-/F 3.5. The gaps are not equal: A- to B+, B- to C+ and C- to D+ are 4 tenths, D- to F is 7, the rest are 3. Ladder positions for counting steps: F 0, D- 1, D 2, D+ 3, C- 4, C 5, C+ 6, B- 7, B 8, B+ 9, A- 10, A 11.
 
-**Terms used below.** A verified strength is a reviewer-listed positive, tagged to a grade-band descriptor, whose draft quote passed the cited-span check; a grade of B+ or above needs two under harsh and one under neutral, otherwise that value is limited to B. The near-tie flag means the mean is within 0.05 points (half a tenth) of a tie point. The integrity cap sets the overall "as submitted" to F, shows Use of sources as a conditional cell `X (Y once <named fix> is done)`, and computes the "alone" grade with Y in place of X; it needs one quotation meeting four conditions: (1) marked and attributed to a named work, (2) a sense-bearing difference of at least clause length, shown by route (a), a counter-passage in an edition matching the author's, or route (b), wording that matches an archived earlier report and appears in no opened text of the work, (3) load-bearing, (4) unresolved in the draft being graded. Criterion-level evidence is a tracker row of that criterion verified resolved, newly opened or regressed this round, or a verified strength gained or lost.
+**Terms used below** (adjudication.md holds the full definitions of verified strength, near-tie, the integrity test and criterion-level evidence). A grade of B+ or above needs two verified strengths under harsh and one under neutral, otherwise that value is limited to B. The near-tie flag means the mean is within 0.05 points (half a tenth) of a tie point. The integrity cap sets the overall "as submitted" to F, shows Use of sources as `X (Y once <named fix> is done)` and computes the "alone" grade with Y in place of X; it needs one quotation meeting four conditions: (1) marked and attributed to a named work, (2) a sense-bearing difference of at least clause length, shown by route (a), a counter-passage in an edition matching the author's, or route (b), wording that matches an archived earlier report and appears in no opened text of the work, (3) load-bearing, (4) unresolved in the draft being graded.
 
 **Reading the inputs.** Each input table gives the values of the grades.json fields of the same name (`weights`, `criteria.<key>.grade`, `.conditional`, `.verified_strengths`, `harshness`); the tenths column is derived, not an input. Unless a table says otherwise, every `previous` is null, `previous_overall` is `{"as_submitted": null, "alone": null}` and `cap` is `{"fired": false, "basis": []}`. S is the sum of weight x tenths over graded criteria and W the sum of their weights. To round, compare 2S with (hi + lo) x W for the two adjacent steps around the mean S/W: below gives lo, above gives hi, equal is an exact tie.
 
@@ -23,7 +23,7 @@ Working: S = 2x27 + 23 + 23 + 2x27 + 23 + 23 = 200; W = 2+1+1+2+1+1 = 8; mean = 
 
 Result: harsh takes the lower step, so `as_submitted` C+ and `alone` C+. Neutral takes the higher step, so B- and B-. The exact-tie flag is yes under both, and the near-tie flag is yes.
 
-Variant on a 3-tenth gap (all weights 1; grades B, B, B, B-, B-, B-): S = 171, W = 6, mean 28.5; (30 + 27) x 6 = 342 = 2S, an exact tie between B (30) and B- (27): harsh B-, neutral B.
+Variant on a 3-tenth gap (all weights 1; primary to mechanics graded B, B, B, B-, B-, B-; all verified_strengths 0, which is enough because no grade is B+ or above): S = 171, W = 6, mean 28.5; (30 + 27) x 6 = 342 = 2S, an exact tie between B (30) and B- (27): harsh B-, neutral B.
 
 ## Example 2: an integrity cap and its conditional cell
 
@@ -67,7 +67,7 @@ The one ledger row that reached the test (an invented treatise on tidal engineer
 
 Working: MISMATCH with a counter-passage in the matching edition meets the first row of the decision table in adjudication.md (a status that can fire, with its evidence), so the cap fires. `as_submitted` is F. For `alone`, Y = B (30) replaces X = D (10) on sources: S = 30 + 27 + 27 + 30 + 23 + 27 = 164; W = 6; mean 82/3 = 27.33; (30 + 27) x 6 = 342 and 2S = 328 is below it, so the lower step B-. No tie, not near a tie point.
 
-Result: `as_submitted` F, `alone` B-; movement from `previous_overall`: -7 and 0. The sources cell prints "D (B once the quotation in paragraph 14 is corrected)". Printed lines, assuming no criterion-level evidence for the second: "As submitted: F (was B-)" and "On the writing and argument alone: B- (no reliable change)". The target is B- ("what it takes to restore it"). Log: "cap: fired; q-3b9e41 route (a); Y = B; fix: replace the string with the exact second-edition sentence, or paraphrase it fully with a citation; alone B-".
+Result: `as_submitted` F, `alone` B-; movement from `previous_overall`: -7 and 0. The sources cell prints "D (B once the quotation in paragraph 14 is corrected)". Printed lines, assuming no criterion-level evidence for the second: "As submitted: F (was B-; cue: integrity cap)" and "On the writing and argument alone: B- (was B-; no reliable change)". The target is B- ("what it takes to restore it"). Log: "cap: fired; q-3b9e41, conditions 1 to 4 yes, route (a), counter-passage second edition p. 88, no near-match; Y = B; fix: replace the string with the exact second-edition sentence, or paraphrase it fully with a citation; as submitted F, alone B-; target B- under the cap rule".
 
 ## Example 3: a partial grade (structure not graded)
 
@@ -77,7 +77,7 @@ Input (harsh; neutral gives the same result):
 |---|---|---|---|---|
 | primary | B | 30 | 2 | 0 |
 | argument | B+ | 33 | 2 | 2 |
-| structure | null | none | 1 | 0 |
+| structure | null (not graded) | none | 1 (ignored) | 0 |
 | sources | B- | 27 | 2 | 0 |
 | originality | C+ | 23 | 1 | 0 |
 | mechanics | B | 30 | 1 | 0 |
@@ -101,7 +101,7 @@ Input (all weights 1), run once with `harshness` harsh (requires 2 verified stre
 
 Working, harsh: argument has 1 of 2, so it is limited to B (30); mechanics has 0 of 2, so it is limited to B (30). S = 30 + 30 + 30 + 27 + 23 + 30 = 170; mean 85/3 = 28.33; (30 + 27) x 6 = 342 and 2S = 340 is below it, so the lower step B-. Neutral: argument has 1 of 1, so B+ (33) stands; mechanics has 0 of 1, so it is still limited to B. S = 30 + 33 + 30 + 27 + 23 + 30 = 173; mean 173/6 = 28.83; 2S = 346 is above 342, so the higher step B.
 
-Result: harsh `alone` B- (limits: argument B+ to B, mechanics B+ to B); neutral `alone` B (limit: mechanics B+ to B). Both means are near the tie point 28.5 (differences 2 and 4, at most W = 6), so without `--repeat` the human-check flag is set, and with `--repeat` the repeat rule fires (example 5).
+Result: harsh `alone` B- (limits: argument B+ to B, mechanics B+ to B); neutral `alone` B (limit: mechanics B+ to B). Both means are near the tie point 28.5 (|2S - 342| is 2 and 4, each at most W = 6), so without `--repeat` the human-check flag is set, and with `--repeat` the repeat rule fires (example 5 works one through on different grades).
 
 ## Example 5: a repeat (two runs averaged in tenths)
 
@@ -118,7 +118,7 @@ Input: `harshness` harsh, all weights 1, `--repeat` passed, all `verified_streng
 
 Working: run 1 has S = 173, mean 173/6 = 28.83; (30 + 27) x 6 = 342 and 2S = 346, so B, and 346 - 342 = 4 <= W = 6 puts it within 0.05 points of a tie point. The repeat rule fires: re-run the owners of every graded criterion (four reviewer calls: the owners for sources, primary, argument with structure and originality, and mechanics). Run 2 through the script: S = 167, mean 27.83, 2S = 334 is below 342, so B-. Both runs are in the B band, so no disagreement from the runs. Re-run `compute_grade.py` with the means as numbers in the grade field (30, 28.5, 30, 28.5, 30, 23) and `verified_strengths` 0: S = 170, W = 6, mean 85/3 = 28.33; 2S = 340 is below 342, so the lower step B-.
 
-Result: the grade of record is B- for `as_submitted` and `alone` (run 1 alone gave B). Logged spread: argument 3 tenths, sources 3, the other criteria 0, overall 1 tenth; cost 4 extra reviewer calls. Confidence gains the reasons "non-zero repeat spread" and "within one step of a tie point" (340 is 2 from 342), so it is medium (assuming no low reason applies). The overall moved from B to B- (-1 step); with no criterion-level evidence for any criterion that moved, print "no reliable change" and keep "was B" in the bracket.
+Result: the grade of record is B- for `as_submitted` and `alone` (run 1 alone gave B). Logged spread: argument 3 tenths, sources 3, the other criteria 0, overall 1 tenth; cost 4 extra reviewer calls. Confidence gains the reasons "non-zero repeat spread" and "within one step of a tie point" (340 is 2 from 342), so it is medium (assuming no low reason applies). The overall moved from B to B- (-1 step); with no criterion-level evidence for any criterion that moved, print "(was B; no reliable change)" on the overall line.
 
 ## Example 6: two negative controls that must not cap
 

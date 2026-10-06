@@ -2,7 +2,7 @@
 
 > **For the agent executing this plan.** Work phase by phase. Each phase has three subphases in order: **Q&A** (record decisions in `docs/phases/phase-N-discussion.md`), **agentic research** (notes in `docs/research/phase-N/`), then **build**. Finish every build task, run its **Verify** checks (including the privacy scan), show the user the result, then commit and push to `main` (push after every meaningful change, not only at phase ends). Where this plan names a Claude Code file format, flag or command, confirm it against the official docs linked in the phase; if a doc contradicts this plan, follow the doc and note it in `CHANGELOG.md`. Ask the user only where a decision is not already in `DECISIONS.md`.
 >
-> **Inputs.** `DECISIONS.md` (D1-D16, R1-R22, A1-A53) is the single source of truth for decisions. `docs/design/method-digest.md` holds the detailed requirements for the reference files, templates, agent briefs and scripts, and `docs/design/file-contracts.md` holds formats, schemas, tables and small rules; Phases 1-5 build from both. `docs/research/phase-1/` holds the evidence and the verified style rules. Private source material (earlier reviews, essay drafts, the denylist) lives **outside the repository** in `../betterpaper-private/` and is never read into a tracked file.
+> **Inputs.** `DECISIONS.md` (D1-D16, R1-R22, A1-A56) is the single source of truth for decisions. `docs/design/method-digest.md` holds the detailed requirements for the reference files, templates, agent briefs and scripts, and `docs/design/file-contracts.md` holds formats, schemas, tables and small rules; Phases 1-5 build from both. `docs/research/phase-1/` holds the evidence and the verified style rules. Private source material (earlier reviews, essay drafts, the denylist) lives **outside the repository** in `../betterpaper-private/` and is never read into a tracked file.
 
 **What changed from revision 1.** Names; six criteria; argumentative and theoretical academic writing only; three citation styles; human-confirmed anchors; a narrower integrity cap; reviewer waves with a verification step between them; six deterministic scripts plus an eval-metrics tool; an adjudication file with worked examples; confidence and human-check flags; an allow/deny matrix for the author's words; a demo built early; a committed privacy hook; a private gold set; Phase 7 kept generic.
 
@@ -53,7 +53,7 @@ Full notes: `docs/research/phase-1/` (`llm-grading-evidence.md`, `grading-litera
 | D12 | Style-rule sources | Built only after the user's source material is ingested (done); `[U]` rules are never errors |
 | D13, D14 | Venue and scope | Post-graduate; argument with research plus general theory; **theory-fiction out of scope** |
 | D15 | Reference grades | Tool-assigned, so unconfirmed (R4) |
-| R1-R22, A1-A53 | Sheet and assistant defaults | See `DECISIONS.md` |
+| R1-R22, A1-A56 | Sheet and assistant defaults | See `DECISIONS.md` |
 
 ---
 
@@ -119,7 +119,7 @@ Repo, manifests, `.gitignore`, MIT licence, `DECISIONS.md`; both `claude plugin 
 
 ---
 
-## Phase 1: Shared references (the rules of the house)
+## Phase 1: Shared references (the rules of the house) (built; open style points in `docs/phases/phase-1-build-notes.md`)
 
 Build from `docs/design/method-digest.md` sections 1-5 (sections 4-5 for definitions) and `docs/design/file-contracts.md`, and from `docs/research/phase-1/` (the user's Chicago and MLA material is already ingested; addenda A and B of `purdue-deck-verification.md` carry the final tags). Files go under `skills/grade/references/`, each under 200 lines and readable alone. `SKILL.md` stays under 500 lines by linking here. Shipped files define any term they need inline and never cite D, R or A codes. First task: `tools/install-hooks.sh`.
 

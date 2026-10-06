@@ -1,6 +1,6 @@
 # Adjudication: from reviewer returns to grades, flags and a ranked list
 
-Read this after every reviewer has returned. You are the orchestrator (the main agent running the grade skill); a reviewer is one of the five specialist subagents. Apply each rule as written, log the cue behind each decision, and never replace a rule with judgement. Worked numbers are in adjudication-examples.md. Every threshold in this file is provisional, and the confidence note is a triage heuristic labelled "uncalibrated", not a probability. Order of work:
+Read this after every reviewer has returned. You are the orchestrator (the main agent running the grade skill); a reviewer is one of the five specialist subagents. Apply each rule as written, log the cue behind each decision, and never replace a rule with judgement. Worked numbers are in adjudication-examples.md; the report layout is in report-template.md and report-sections.md. Every threshold in this file is provisional, and the confidence note is a triage heuristic labelled "uncalibrated", not a probability. Order of work:
 1. Test every quotation for the integrity cap (section 5) and merge the findings (section 3).
 2. Count verified strengths per criterion and set each criterion grade (section 2); write the grades.json file (section 1).
 3. Record your holistic letter grade (section 7), then run `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/compute_grade.py <RUBRIC.md> <grades.json>`.
@@ -42,7 +42,7 @@ A verified strength is a positive in a reviewer's Strengths block that is tagged
 ## 3. Merge rule
 
 Merge all reviewer tables into one list. Each reviewer returns at most 10 ranked findings and 3 strengths per criterion owned; if a return is longer, keep the first 10 in the reviewer's own order and log the overflow.
-1. Map reviewer-local IDs to tracker IDs (existing row or new row).
+1. Map reviewer-local IDs to tracker IDs (existing row or new row). A finding's defect code is the capitalised code that opens its Problem cell (for example `BRIDGE-GAP: ...`). Mechanics findings (classes M1 to M3) and citation-form findings carry no code by design (step 4); any other finding with no code from section 4 is not ranked, so return it to its reviewer to recode, or log it and list it among the open issues.
 2. De-duplicate by quoted location: findings whose draft quotes overlap one passage become one entry that keeps the most severe tier and lists every reviewer ID and each distinct defect code.
 3. Charge each defect to one criterion, overriding the author's tag: citation-form defects and wrong quotations to Use of sources (never to Command of primary texts); phrase-level filler to Mechanics; paragraph-level padding to Structure; an uncredited precedent to Use of sources for the failure to credit and to Originality only for the contribution beyond the precedent, never both for one fault.
 4. Rank only findings that carry a defect code: tier ascending (section 4), then the weight of the charged criterion (heavier first), then return order. Rank by residual damage to the thesis in this draft, never by instance count. Citation-form defects go to Citation problems and mechanics items to Proofreading, outside the ranking.
@@ -71,7 +71,7 @@ Mechanics classes are M1 (spelling and agreement), M2 (syntax) and M3 (diction a
 
 ## 5. Integrity test and the cap
 
-The integrity cap (the "split") is the only cap. Test each row of the source-verifier's quotation ledger block (one row for every attributed quotation, with its status and flags and no 10-row limit) one at a time; its "trigger" field is a proposal, so re-test every row yourself. One row that meets all four conditions fires the cap; rows that miss a condition never add up. Grade-lowering and cap decisions may rest only on a check against the original or a named secondary source; recall and not-found-only claims go to the "check your copy" list with no grade effect.
+The integrity cap (the "split") is the only cap. Test each row of the source-verifier's quotation ledger block (one row for every attributed quotation, identified by its QID, a stable ID derived from the normalised string, with its status and flags and no 10-row limit) one at a time; its "trigger" field is a proposal, so re-test every row yourself. One row that meets all four conditions fires the cap; rows that miss a condition never add up. Grade-lowering and cap decisions may rest only on a check against the original or a named secondary source; recall and not-found-only claims go to the "check your copy" list with no grade effect.
 
 | # | Condition | Test |
 |---|---|---|
@@ -123,17 +123,7 @@ Statuses (one per ledger row):
 
 Flags (added to a status when they apply). REVIEW-ECHO: the draft wording matches an archived report's wording. SECONDARY-ECHO: it matches a secondary summary's own phrasing (status UNVERIFIED plus SECONDARY-ECHO, or VERIFIED-SECONDARY if the author cites the summary). SWAPPED-WORDS: a short quoted phrase with a few words changed from an earlier report's wording. NOT-FOUND: a search of a named text found nothing. QUOTED-IN: the wording appears in an intermediary the author did not cite. REF-COPY-OCR: the only copy of the source is a scan with OCR, so it cannot ground VERIFIED-PRIMARY.
 
-Report sections are defined in report-template.md.
-
-| Status or flag | Report section | In "defects" count | Counts toward the cap |
-|---|---|---|---|
-| MISMATCH, PARAPHRASE-IN-QUOTES | Quotation problems (numbered entry) | yes | only if all four conditions hold |
-| MISATTRIBUTED (with QUOTED-IN) | Quotation problems | yes | no |
-| TRANSPOSED | Quotation problems | yes | no |
-| NEAR-VERBATIM-UNMARKED, MARKS-WITHOUT-SOURCE | Quotation problems | yes | no |
-| OCR-ERROR | Quotation problems (one line) | yes | no |
-| UNVERIFIED, SECONDARY-ECHO, NOT-FOUND, REF-COPY-OCR | Citation problems ("check your copy" list) | no | no |
-| VERIFIED-PRIMARY, VERIFIED-SECONDARY | never listed | no | no |
+Which report section prints each status, and whether it counts as a defect, is the status table in report-sections.md; the decision table above says what can fire the cap.
 
 ## 7. Confidence, flags, disagreement and repeat
 
@@ -145,7 +135,7 @@ Confidence is categorical, with named reasons. Print the category, every reason 
 | cross-check disagreement | low | the disagreement signal below fired |
 | a cap fired | low | section 5 fired the cap |
 | unverified-quotation share over 30% | medium | UNVERIFIED rows divided by the attributed quotations checked this round (the count line's c over N) exceeds 0.30 |
-| within one step of a tie point | medium | the unrounded "alone" mean is within 0.05 points of a tie point, so one criterion moving one step could change the overall step |
+| within one step of a tie point | medium | the unrounded "alone" mean (after a repeat, the mean of record) is within 0.05 points of a tie point, so one criterion moving one step could change the overall step |
 | top band | medium | the "alone" grade is A or A- (also when the overall is partial) |
 | same-essay anchors only | medium | every selected anchor (a human-confirmed graded earlier draft shown as a scale reference) is an earlier draft of this essay |
 | non-zero repeat spread | medium | the two repeat runs differ on any criterion or on the overall |
@@ -166,7 +156,7 @@ Agreement among reviewers never raises confidence: they share one model family a
 
 ## 8. Print rule and target rule
 
-**No reliable change.** When a criterion cell or an overall moved by one step or less since the previous draft and you cannot cite criterion-level evidence, print "no reliable change" instead of any movement words, and keep the previous value in its bracket (movement is counted in rungs; `compute_grade.py` reports it). Criterion-level evidence is a tracker row charged to that criterion verified RESOLVED or REMOVED-VERIFIED, newly opened or REGRESSED this round, or a verified strength gained or lost, cited by finding ID; for an overall, evidence for at least one criterion that moved. A cap is the cue for the "as submitted" line. A move of more than one step prints with its cue.
+**No reliable change.** When a criterion cell or an overall moved by one step or less since the previous draft and you cannot cite criterion-level evidence, print "no reliable change" instead of any movement words, inside the bracket that holds the previous value: `(was B-; no reliable change)` (movement is counted in rungs; `compute_grade.py` reports it). Criterion-level evidence is a tracker row charged to that criterion verified RESOLVED or REMOVED-VERIFIED, newly opened or REGRESSED this round, or a verified strength gained or lost, cited by finding ID; for an overall, evidence for at least one criterion that moved. A cap is the cue for the "as submitted" line: `(was B-; cue: integrity cap)`. A move of more than one step prints with its cue: `(was C; cue: <finding IDs>)`. With no previous value (draft 1) print no bracket.
 
 **Target.** The target is the lowest step of the next letter band above the "alone" grade; the distance is the rungs between them. Under a cap the target is the "alone" grade ("what it takes to restore it"), with no step count.
 

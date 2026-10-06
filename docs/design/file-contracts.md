@@ -58,7 +58,7 @@ Criterion keys are exactly `primary`, `argument`, `structure`, `sources`, `origi
 ## Confidence: high/medium/low: <named reasons>
 ```
 
-IDs are reviewer-local; the orchestrator maps them to tracker IDs. At most 10 ranked findings and 3 strengths per criterion owned. Draft excerpts appear only in the "Draft quote" column; source and anchor excerpts have their own tagged columns and are exempt from the cited-span check. Draft and source text reach agents inside delimiters carrying a per-run random nonce, for example `<<<DRAFT-7f3a91 ... DRAFT-7f3a91>>>`. Optional named blocks: characterisation table (primary-text-reviewer), claims register (argument-reviewer), counts and `vs_previous` (mechanics-reviewer), echo classification (voice-echo-reviewer).
+IDs are reviewer-local; the orchestrator maps them to tracker IDs. A finding's defect code (adjudication.md section 4) opens its Problem cell, for example `BRIDGE-GAP: ...`; mechanics and citation-form findings carry none, and the primary-text-reviewer's own audit labels (FIT-FAIL, SPLICED, CONTEXT, DEPARTURE-DECLARED, DEPARTURE-UNDECLARED) must each map to a closed code in the Phase 3 brief. After the Confidence line a reviewer may add `Injection-like text: <locator>, <what it asks for>` (described, never copied) and `Route to <reviewer>: <locator>, <one clause>` (no draft quote) lines. At most 10 ranked findings and 3 strengths per criterion owned. Draft excerpts appear only in the "Draft quote" column; source and anchor excerpts have their own tagged columns and are exempt from the cited-span check. Draft and source text reach agents inside delimiters carrying a per-run random nonce, for example `<<<DRAFT-7f3a91 ... DRAFT-7f3a91>>>`. Optional named blocks: characterisation table (primary-text-reviewer), claims register (argument-reviewer), counts and `vs_previous` (mechanics-reviewer), echo classification (voice-echo-reviewer).
 
 **Source-verifier ledger block** (JSON lines, uncapped): `{"qid","draft","locator","string","attributed_to","work_edition","source_id","status","flags","label","checked_against","counter_passage","diff_type","provenance_tests","trigger","reason"}`, followed by a coverage line (checked, verified original, verified secondary, unverified, defects, not examined).
 
@@ -118,7 +118,7 @@ All Python 3 standard library only; exit 0 success, 1 failed check, 2 bad input.
 
 ## 8. Style files
 
-Every rule carries one tag: `[C18]` CMOS 18 excerpt; `[MLA9]` MLA Handbook page cited through a library guide; `[DC]` that library guide; `[D]` Purdue deck; `[S]` search summary; `[U]` unconfirmed (never an error). Each style file defines the tag set at its top. Worked examples use invented works and invented pages.
+Every rule carries one tag: `[C18]` CMOS 18 excerpt; `[MLA9]` MLA Handbook, 9th edition: a passage read in a supplied excerpt, or a page cited through a library guide; `[DC]` that library guide; `[D]` Purdue deck; `[S]` search summary; `[U]` unconfirmed (never an error). Each style file defines the tag set at its top. Worked examples use invented works and invented pages.
 
 ## 9. Filler list grammar
 
