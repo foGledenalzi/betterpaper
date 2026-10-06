@@ -6,6 +6,9 @@
 **/reviewer-notes/
 **/anchors/
 **/sources/
+**/worksheets/
+**/_private/
+**/feedback/
 
 # The fictional demo essay under examples/ is the only exception.
 !/examples/**/drafts/
@@ -13,6 +16,8 @@
 !/examples/**/reviewer-notes/
 !/examples/**/anchors/
 !/examples/**/sources/
+!/examples/**/worksheets/
+!/examples/**/feedback/
 
 .DS_Store
 __pycache__/

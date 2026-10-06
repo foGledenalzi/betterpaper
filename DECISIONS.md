@@ -33,7 +33,6 @@ Other choices
   - `rules.md`: the line "distinguish the genre (argument or theory-fiction)" becomes "grade as argumentative or theoretical academic writing; if the essay is something else, say so once and grade it as an argument, flagged as outside the tool's design".
   - `grade-bands.md`: no declared-mode rule and no experimental-genre handling.
   - `init` interview: genre options are argumentative research essay, theoretical or conceptual essay, or other (which triggers the out-of-scope warning).
-  - Phase 7: a "stuck between genres" finding in an early review becomes a plain "choose one genre" step; for this tool the answer is always argument.
   - The rubric research gap about experimental writing no longer matters.
 
 ## Phase 1 sheet accepted (2026-10-06)
@@ -65,8 +64,8 @@ The user accepted all 22 recommended defaults in `docs/phases/phase-1-open-decis
 See `docs/research/phase-1/purdue-deck-verification.md` (addenda A and B). Notable: CMOS 18 notes name only the first of more than two authors; bibliography lists up to six (more than six: first three plus "et al."); DOIs are `https://doi.org/` links; block quotations are a soft 100-word rule; in notes-bibliography style a "quoted in" citation lists both original and secondary source; ancient works are cited by standard divisions with no page numbers.
 
 ## D15: Reference grades are tool-assigned (2026-10-06)
-The user confirmed that the grades in the three real earlier reviews were Claude's own, not a human grader's. Consequences:
+The user confirmed that the grades in the earlier reviews they supplied were assigned by Claude, not by a human grader. Consequences:
 - Every anchor derived from them starts `unconfirmed` and cannot anchor a grade until the author or an instructor confirms or adjusts it (R4); a confirmation sheet is generated for that purpose.
 - Grade descriptors tagged `[observed]` in `grade-bands.md` mean "seen in earlier unconfirmed reviews".
-- The Phase 7 grade comparison measures self-consistency, not accuracy, until a human confirms the grades; the objective checks (quotation mismatches, recurring proofreading items) are unaffected.
-- **Correction to the R1 rationale.** The statement that equal weights "reproduce all three real overall grades" only shows that equal weights match how the tool aggregated its own criterion grades. It is not evidence that equal weights match a human grader. R1 stays as accepted (equal weights, editable) and is tested in the gold-set evaluation once human grades exist.
+- A later grade comparison against those reviews measures self-consistency, not accuracy, until a human confirms the grades; objective checks (quotation mismatches, recurring proofreading items) are unaffected.
+- **Correction to the R1 rationale.** Agreement between equal weights and the tool's earlier overall grades only shows that equal weights match how the tool aggregated its own criterion grades. It is not evidence that equal weights match a human grader. R1 stays as accepted (equal weights, editable) and is tested in the gold-set evaluation once human grades exist.

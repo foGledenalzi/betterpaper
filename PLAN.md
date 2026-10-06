@@ -154,7 +154,7 @@ Non-negotiables for every agent:
 
 ### 1.4 `report-template.md` (R12)
 Header block (draft number, essay title, review date, model). Sections, each marked always, draft-1 only, draft 2 or later, integrity-triggered or correction-triggered:
-1. Grade lines with the previous value on each, e.g. `As submitted: F (was C-)` and `On the writing and argument alone: C+`; verdict opens by explaining a split.
+1. Grade lines with the previous value on each, e.g. `As submitted: F (was B-)` and `On the writing and argument alone: B`; verdict opens by explaining a split.
 2. Rubric table, one column per draft, with a one-line reason per cell and the conditional-cell syntax; `Why it moved` for any row moving against the overall direction.
 3. Draft 1: *What's worth keeping* (2-4 items). Draft 2 and later: *What improved*, generated only from tracker items verified as resolved this round.
 4. Correction (conditional).
