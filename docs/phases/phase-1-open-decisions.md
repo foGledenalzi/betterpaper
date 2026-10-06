@@ -1,6 +1,6 @@
 # Phase 1: open decisions with recommended defaults
 
-Date: 2026-10-06. Each row has a recommended default. Reply "defaults ok", or list row numbers to change. Anything unanswered when the Phase 1 build starts is built with the default and recorded as a decision.
+Date: 2026-10-06. **STATUS: ACCEPTED by the user on 2026-10-06 ("defaults are fine for now").** Every row below is adopted as written and referred to as R1-R22 in `PLAN.md`; rows can be revisited after the first gold-set run.
 
 Evidence: `docs/research/phase-1/grading-literature-synthesis.md` (12 papers) and, privately, an analysis of three real reviews (structure and method only, no content).
 

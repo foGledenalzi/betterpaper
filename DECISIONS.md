@@ -35,3 +35,31 @@ Other choices
   - `init` interview: genre options are argumentative research essay, theoretical or conceptual essay, or other (which triggers the out-of-scope warning).
   - Phase 7: a "stuck between genres" finding in an early review becomes a plain "choose one genre" step; for this tool the answer is always argument.
   - The rubric research gap about experimental writing no longer matters.
+
+## Phase 1 sheet accepted (2026-10-06)
+The user accepted all 22 recommended defaults in `docs/phases/phase-1-open-decisions.md` ("defaults are fine for now"). They are referred to as R1-R22. Summary:
+- **R1** equal weights, editable in `RUBRIC.md` (supersedes the 25/25/20/10/10/10 default in D10; weights stay editable).
+- **R2** `argument-reviewer` also owns Originality; `primary-text-reviewer` supplies unacknowledged precedents.
+- **R3** Structure is kept, flagged "low confidence: not calibrated", within one notch of Argument unless two structure-specific findings justify more; no double counting.
+- **R4** anchor grades are human-confirmed; tool-assigned grades are marked unconfirmed and cannot anchor.
+- **R5** anchor count is a setting; seeded, recorded anchor order per reviewer; the draft under review is excluded.
+- **R6** harsh default stays; a neutral-severity eval arm decides later.
+- **R7** the plugin inherits the session model and records it in every report.
+- **R8** the two-grade split fires per quotation only when it is attributed, a sense-bearing difference is shown, it is load-bearing, and it is unresolved; never on "unverified", "not found" or recall alone.
+- **R9** the cap sets the overall "as submitted" grade to F; the Sources row shows a conditional value; the "alone" grade substitutes the conditional values.
+- **R10** extra quotation flags: wrong-work attribution, near-verbatim without marks, marks around a non-quotation, secondary-summary match.
+- **R11** a script confirms every excerpt a reviewer cites appears verbatim in the draft; failures are dropped or relabelled.
+- **R12** report template with header block, draft-1 variant, fixed footer, conditional sections, previous grade on each grade line, and the word "alone".
+- **R13** Correction section covers both a wrong earlier claim and a backfired suggestion.
+- **R14** author status markers are stored as author claims and verified next round.
+- **R15** two recurrence counters: drafts present and rounds flagged; labels are generated from stored counts.
+- **R16** positioning flags only from context declared in `RUBRIC.md`; one inline sentence.
+- **R17** categorical confidence with named reasons, labelled "uncalibrated", plus a human-check flag (top band, any cap, reviewer disagreement of a band or more).
+- **R18** allow/deny matrix for the author's words, with a paste test.
+- **R19** blank bracketed citation templates plus one unrelated filled example; never pre-filled from the author's works.
+- **R20** the echo check runs first and its results reach the source-verifier and orchestrator before remedies are written.
+- **R21** style-perturbation and injection fixtures ship in `evals/`.
+- **R22** a human-graded gold set is built for the evals.
+
+## Style rules settled by the supplied Manual and handbook excerpts (2026-10-06)
+See `docs/research/phase-1/purdue-deck-verification.md` (addenda A and B). Notable: CMOS 18 notes name only the first of more than two authors; bibliography lists up to six (more than six: first three plus "et al."); DOIs are `https://doi.org/` links; block quotations are a soft 100-word rule; in notes-bibliography style a "quoted in" citation lists both original and secondary source; ancient works are cited by standard divisions with no page numbers.
