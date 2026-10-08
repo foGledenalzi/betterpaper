@@ -24,3 +24,7 @@ Date: 2026-10-06
 
 ## Build order (Phase 2)
 `references/tracker-rules.md`; five templates; `references/web-links.md`; `skills/init/SKILL.md`; the demo (workflow with an independent answer-key check); Verify and push.
+
+## Research status (2026-10-08)
+Four notes in `docs/research/phase-2/`: `claude-code-skills.md` (tested with the installed CLI and independently re-verified; Windows parts are documented, not run), `docx-html-import-notes.md`, `link-citation-conventions.md` and `python-platform-notes.md`. Decisions drawn from them are recorded as A57-A68 in `DECISIONS.md`. Main consequences: script-prefix Python permissions instead of the broad pattern; `Edit(betterpaper/**)` instead of `Write(...)`; `Read(/${CLAUDE_PLUGIN_ROOT}/**)`; no Python command stored in `RUBRIC.md`; no draft intake by URL (WebFetch summarises); `omitClaudeMd: true` on agents; a stub agent that listed Bash was fixed.
+

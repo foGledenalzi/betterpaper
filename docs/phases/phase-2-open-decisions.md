@@ -50,7 +50,7 @@ Evidence base for the defaults: `docs/design/method-digest.md` (sections 4 and 5
 
 | # | Question | Recommended default | Why |
 |---|---|---|---|
-| 23 | Calling Python | The skills probe once for `python3`, then `python`, then `py -3`, and write the command that works as `python_cmd` in `RUBRIC.md`; the `allowed-tools` list covers all three forms. The README lists Python 3.9 or later as a prerequisite | A Windows machine often has no `python3`; a failing script call would stop a run at step one |
+| 23 | Calling Python | The skills probe once for `python3`, then `python`, then `py -3` on every run (amended after research: the command is not stored in `RUBRIC.md`, see A62); the `allowed-tools` list covers all three forms. The README lists Python 3.9 or later as a prerequisite | A Windows machine often has no `python3`; a failing script call would stop a run at step one |
 | 24 | Version floor | Python 3.9 or later, standard library only | Wide availability; no dependency to install |
 | 25 | Guard against prompt text in templates | Template and demo files carry no instructions addressed to an assistant other than the skill's own text | A planted instruction in a template would be copied into every workspace |
 | 26 | Extra checks before each push | Phase 2's Verify adds: the privacy scan, the "no decision codes in shipped files" grep, `claude plugin validate`, and a dry run of `init demo-essay` in a throwaway folder | Same discipline as Phase 1 |
