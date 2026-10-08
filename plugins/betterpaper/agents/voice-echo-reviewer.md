@@ -1,7 +1,7 @@
 ---
 name: voice-echo-reviewer
 description: Reports wording overlaps with earlier reviews and generic filler phrases.
-tools: Read, Grep, Bash(python3 *)
+tools: Read, Grep
 model: inherit
 ---
 
