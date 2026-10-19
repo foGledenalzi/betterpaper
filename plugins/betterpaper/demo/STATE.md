@@ -57,7 +57,7 @@ A derived list of the folders `anchors/draft-N/`. The `ANCHOR.md` file in each f
 |---|---|---|---|
 | 21 | A- | A | instructor |
 | 22 | B | B | author |
-| 23 | C+ | C | author |
+| 23 | C | C | author |
 | 24 | D | D | instructor |
 
 ## Anchor-order log

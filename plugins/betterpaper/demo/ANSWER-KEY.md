@@ -91,7 +91,7 @@ Status is written `rounds_flagged/drafts_present/last_seen`. The first block of 
 | SRC-006 | QUO OCR-ERROR, q18 | none | OPEN 1/1/3 | one line: tal1y corrected to tally, and check every quotation against the printed edition |
 | SRC-007 | QUO TRANSPOSED, q21 | none | OPEN 1/1/3; `follow_up_of` and `thread` SRC-002 | numbered entry, no tag |
 | SRC-008 | CIT, note 1 | none | OPEN 1/1/3 | Citation problems; citation ledger gap `translator not named in the first note`; template `[First Last], *[Title]*, trans. [First Last] ([Publisher], [year]), [page].` |
-| MECH-001 | agreement | RECURRING 2/2/2 (2 instances) | PARTIAL 3/3/3 (1 instance) | Proofreading; `(half fixed)` `(pattern flagged in 3 reviews)`; draft 1: p11, p12; draft 2: p11, p13; draft 3: p13 |
+| MECH-001 | agreement | RECURRING 2/2/2 (2 instances) | PARTIAL 3/3/3 (1 instance) | Proofreading; `(third round)` `(half fixed)` `(pattern flagged in 3 reviews)`; draft 1: p11, p12; draft 2: p11, p13; draft 3: p13 |
 | MECH-002 | apostrophe | RESOLVED 1/1/1 | unchanged | not printed; p14 in draft 1, gone in draft 2 |
 | MECH-003 | comma-splice | RECURRING 2/2/2 | RESOLVED 2/2/2 | What improved; p15 in drafts 1 and 2, gone in draft 3 |
 
@@ -165,7 +165,7 @@ Anchors (all `imported: no`, `model: unknown`, note `fictional demo: invented ca
 |---|---|---|---|---|---|---|
 | draft-21 | lantern-gauge | A- | A- A- B+ A- B+ A | 217, 36.17 | instructor, 2030-11-04 | the near-top-band anchor |
 | draft-22 | pier-scale | B | B B B B- B- B | 174, 29.0 | author, 2030-11-04 | middle |
-| draft-23 | tessel-glass-short | C+ | C+ C+ C+ C C+ C | 132, 22.0 | author, 2030-11-05 | near-duplicate of draft 3, excluded |
+| draft-23 | tessel-glass-short | C | C C C C- C C- | 114, 19.0 | author, 2030-11-05 | near-duplicate of draft 3, excluded |
 | draft-24 | reed-meter | D | D D+ D D D+ D (tool); sources adjusted to D- | 66 tool, 63 adjusted, 10.5 | instructor, 2030-11-06 | low band; `human_adjusted: yes` |
 
 - `ANCHOR.md` rows: `tool_grade` equals `grade` except draft-24 sources (tool D, grade D-, status `adjusted`); all other rows are `confirmed`, each naming the header confirmer; the `overall_alone` row confirms D for draft-24. `CONFIRM.md` holds 28 rows (7 per anchor), all `confirm` except draft-24 sources (`adjust`, adjusted grade D-), so `init demo-essay --confirm` reports every row already applied.

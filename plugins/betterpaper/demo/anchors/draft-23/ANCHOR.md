@@ -5,8 +5,8 @@ essay: tessel-glass-short
 imported: no
 text: text.md
 model: unknown
-overall_as_submitted: C+
-overall_alone:  C+
+overall_as_submitted: C
+overall_alone: C
 band: C
 confirmed_by: author
 human_adjusted: no
@@ -16,22 +16,22 @@ note: fictional demo: invented calibration text
 
 | criterion | grade | conditional | tool_grade | status | confirmed_by |
 |---|---|---|---|---|---|
-| overall_alone | C+ | | C+ | confirmed | author |
-| primary | C+ | | C+ | confirmed | author |
-| argument | C+ | | C+ | confirmed | author |
-| structure | C+ | | C+ | confirmed | author |
-| sources | C | | C | confirmed | author |
-| originality | C+ | | C+ | confirmed | author |
-| mechanics | C | | C | confirmed | author |
+| overall_alone | C | | C | confirmed | author |
+| primary | C | | C | confirmed | author |
+| argument | C | | C | confirmed | author |
+| structure | C | | C | confirmed | author |
+| sources | C- | | C- | confirmed | author |
+| originality | C | | C | confirmed | author |
+| mechanics | C- | | C- | confirmed | author |
 
 ## Rationale
 
-- primary: prim-c-2 holds in the main line: the count the glass keeps is used with its contrast term dropped, though the line still follows the account of a reading as an answer. Plus from prim-b-1: nothing in the abridged text is misread.
-- argument: arg-c-1 holds: the thesis is present but the abridged text works through no objection and gives no example, so the reader supplies the steps between paragraphs. Plus from arg-b-3: reading and tally are used in one sense from the opening to the end.
-- structure: stru-c-3 holds: proportion is lopsided, with an opening, one account paragraph and an ending, and no body to carry the argument. Plus from stru-b-1: the thesis is clear in the opening paragraph and the order is logical.
-- sources: src-c-3 holds: the treatise the essay relies on is never named or cited, and no note is given. No strength of the band above shows.
-- originality: orig-c-1 holds: the account is standard and the author's view is hard to tell from the treatise's. Plus from orig-b-2: the false zero is an apt application but is not developed far enough to carry the argument.
-- mechanics: mech-c-1 holds: stacked clauses in the second and third paragraphs cloud meaning on a first read (M2), and one long sentence shape recurs (M3). No strength of the band above shows.
+- primary: prim-c-2 holds in the main line: the count the glass keeps is used with its contrast term dropped, though the line still follows the account of a reading as an answer.
+- argument: arg-c-1 holds: the thesis is present but the abridged text works through no objection and gives no example, so the reader supplies the steps between paragraphs.
+- structure: stru-c-3 holds: proportion is lopsided, with an opening, one account paragraph and an ending, and no body to carry the argument.
+- sources: src-c-3 holds and one weakness of the band below shows: the treatise the essay relies on is never named or cited, and no note is given, so a reader cannot find anything the essay depends on. Minus.
+- originality: orig-c-1 holds: the account is standard and the author's view is hard to tell from the treatise's.
+- mechanics: mech-c-1 is only barely met: stacked clauses in the second and third paragraphs cloud meaning on a first read (M2), and one long sentence shape recurs (M3), so a reader must reread to follow. Minus.
 
 ## About this file
 

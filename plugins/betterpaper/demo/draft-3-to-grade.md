@@ -16,7 +16,7 @@ In the end the tessel-glass is honest only on the terms of its maker. It speaks 
 
 [^1]: Ismund Karvale, *On the Reading of the Tessel-Glass* (Brennock & Vale, 1934), 11.
 
-[^2]: Ismund Karvale, *Vom Lesen des Tesselglases* (1926), 11, my translation; original: Die Ablesung antwortet nur auf die Frage, die der Strich stellt.
+[^2]: Ismund Karvale, *Vom Lesen des Tesselglases* (Lindenhof Verlag, 1926), 11, my translation; original: Die Ablesung antwortet nur auf die Frage, die der Strich stellt.
 
 [^3]: Karvale, *Tessel-Glass*, 16.
 

@@ -78,7 +78,7 @@ The order is a judgement call; reasonable readers may rank these differently. Ar
 ## PROOFREADING
 
 M1 means spelling and agreement, where a verb matches its subject in number; it is not a matter of style. Agreement errors have appeared in three consecutive drafts: the class persists after instance fixes, so audit the whole text for it.
-- Agreement (M1), para 2: "neither of the readings are": are -> is. Neither takes a singular verb. (half fixed) (pattern flagged in 3 reviews) [MECH-001]
+- Agreement (M1), para 2: "neither of the readings are": are -> is. Neither takes a singular verb. (third round) (half fixed) (pattern flagged in 3 reviews) [MECH-001]
 
 ## WHAT IT WOULD TAKE TO REACH B- (what it takes to restore it)
 
