@@ -110,4 +110,4 @@ One line per attributed quotation, matched by `qid`. The block starts empty. A s
 | locator confidence (RECOMMENDED) | work-level, checked with edition, recalled |
 | status (precedent register) | VERIFIED-PRIMARY, VERIFIED-SECONDARY, UNVERIFIED |
 | credited in the draft (precedent register) | yes, no |
-| evidence_level (ledger) | original, secondary, recalled, none |
+| evidence_level (ledger) | original, secondary, recalled or none |

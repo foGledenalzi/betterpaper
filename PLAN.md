@@ -154,7 +154,7 @@ Phrase-level padding list in the grammar of the file contracts (one lowercase ph
 
 ---
 
-## Phase 2: Workspace init skill, templates, and a minimal demo
+## Phase 2: Workspace init skill, templates, and a minimal demo (built; open points in `docs/phases/phase-2-build-notes.md`)
 
 Docs: <https://code.claude.com/docs/en/skills.md>. Build from digest sections 4-5 and file contracts sections 1, 7 and 10.
 
