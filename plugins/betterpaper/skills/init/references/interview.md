@@ -15,7 +15,7 @@ Read this file when the init skill reaches its interview step (a new workspace f
 
 ## 2. Part 1: free-text items (one plain-chat message)
 
-Open the message with the privacy notice, word for word, as given in step 6 of the init skill (it is not repeated in the final report). Then number the items and say which are optional.
+Open the message with the privacy notice, word for word, as given in step 6 of the init skill, as plain text with nothing before it (it is not repeated in the final report). Any warning or skipped check owed from steps 2 to 5 comes after the notice. Then number the items and say which are optional.
 
 | # | Ask for | Stored as | Rule |
 |---|---|---|---|
