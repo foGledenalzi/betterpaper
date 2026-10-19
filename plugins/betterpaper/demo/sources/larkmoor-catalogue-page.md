@@ -4,7 +4,7 @@ Fictional demo: an invented catalogue page, for testing; the press and the addre
 
 https://press.example/larkmoor/tessel-glass
 
-Ismund Karvale. Revised translation. Second edition, 1971. Paperback, 76 pages. Series: Instruments and Readings. Contents: twelve numbered sections.
+Ismund Karvale. Revised translation. Second edition, 1971. Paperback, 76 pages. Series: Instruments and Readings. Contents: twelve numbered sections, a translator's note and an index.
 
 Blurb: A glass, Karvale argues, never speaks until it has been spoken to.
 

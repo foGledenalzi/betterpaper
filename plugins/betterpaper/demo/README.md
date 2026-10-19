@@ -22,7 +22,7 @@ Every grade, anchor, quotation, source and name in this folder is fictional. The
 4. Then run the same command without `--quick` for the full report. Optionally add `--markers markers-draft-2.md` to pass the author markers file.
 5. `/betterpaper:init demo-essay --confirm` re-applies the anchor sheet. Every row is already applied, so it should report nothing new.
 
-Every graded run is recorded in the workspace, and the next run then starts from changed state. The answer key assumes the stored state at draft 2, so to compare a run with it, start from a fresh copy: a new working folder, or remove `betterpaper/demo-essay/` yourself first.
+Every graded run, quick or full, is recorded in the workspace, so the next run starts from changed state. The answer key describes a first run from the stored state at draft 2. To compare a run with it exactly, start that run from a fresh copy: use a new working folder, or remove `betterpaper/demo-essay/` yourself and run init again (init never overwrites or deletes anything). A full run in a workspace that already holds a quick run of the same file is still useful for seeing how the two modes differ, but its draft number and counters may not match the key.
 
 ## Compare with the key
 

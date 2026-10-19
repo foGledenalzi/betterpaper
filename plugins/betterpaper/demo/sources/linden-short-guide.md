@@ -1,4 +1,4 @@
-Fictional demo: an invented web page about an invented treatise, for testing; the page, its author and its address do not exist.
+Fictional demo: an invented web page about an invented treatise, for testing; the page, its author and its address do not exist. Paragraphs are counted from the first one below the rule.
 
 # A Short Guide to Karvale's Tessel-Glass
 

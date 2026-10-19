@@ -6,7 +6,7 @@ Read this file when the init skill reaches its interview step (a new workspace f
 
 - **Question tool.** The question tool is `AskUserQuestion`. One call holds 1 to 4 questions, each with 2 to 4 options and a header of at most 12 characters. Give each option a short label and a one-sentence description. Put the default option first and end its label with "(Recommended)". The tool adds an Other row for typed text by itself.
 - **Order.** Part 1 is one plain-chat message with the free-text items (section 2); it ends your turn. After the reply, make every Part 2 call (section 3) and then every remaining write in that one turn, without waiting for another message.
-- **Permissions.** The folders and an agreed `.gitignore` line were written before Part 1, under the command's pre-approval. The reply to Part 1 is a new user message, so a write after it may show a permission prompt. Say once that approving it is safe, because init writes only under `betterpaper/<slug>/`.
+- **Permissions.** The folders (and, when the question tool is available, an agreed `.gitignore` line) were written before Part 1, under the command's pre-approval. The reply to Part 1 is a new user message, so a write after it may show a permission prompt. Say once that approving it is safe, because init writes only under `betterpaper/<slug>/`.
 - **Fallback.** If the question tool is not in your tool list or a call fails, ask the Part 2 questions as one numbered chat message, mark each default "(default)", and accept the reply "defaults". Tell the user once that write prompts may appear.
 - **Skipping.** The user may answer "skip" to any optional item. An empty answer is stored as an empty value.
 - **Already answered.** Never ask for what the command line already gave: the slug, and with `--defaults` the title.
@@ -15,7 +15,7 @@ Read this file when the init skill reaches its interview step (a new workspace f
 
 ## 2. Part 1: free-text items (one plain-chat message)
 
-Number the items in the message and say which are optional.
+Open the message with the privacy notice, word for word, as given in step 6 of the init skill (it is not repeated in the final report). Then number the items and say which are optional.
 
 | # | Ask for | Stored as | Rule |
 |---|---|---|---|
@@ -25,18 +25,18 @@ Number the items in the message and say which are optional.
 | 4 | The thesis, in the author's own words | `declared_thesis` | Optional. Copy exactly; never compose, shorten, tidy or suggest one. If the user asks for help, say that the tool does not write it and store an empty value. It is never graded. |
 | 5 | The primary texts the essay treats as its objects | `primary_text` lines | One line per work: work, then translator or edition, then locator system, in three fields separated by semicolons. Only the work is required. Example answer: `The Tidal Ledger; trans. Mara Quill, Saltmarsh Press; page numbers`. |
 | 6 | An assignment brief | `brief.md` | A path to a `.md` or `.txt` file, pasted text, or none. It is read later as declared context for genre, audience and length only. |
-| 7 | Folders of confirmed anchors from other essays | `extra_anchor_dirs` | Optional. Each folder must be under the working folder, written with forward slashes, with no `..`, drive letter, leading slash or semicolon, and must hold at least one `draft-*/ANCHOR.md`. Drop and report any that fails. They are read, never written. |
+| 7 | Folders of confirmed anchors from other essays | `extra_anchor_dirs` | Optional. Each folder must be under the working folder, written with forward slashes and only letters, digits, spaces, hyphens, underscores and dots, with no `..`, drive letter, leading slash, semicolon or other symbol, and must hold at least one `draft-*/ANCHOR.md` (check with `ls` and the path in double quotes). Drop and report any that fails. They are read, never written. |
 | 8 | The number the first draft graded here will have (default 1), and every earlier draft that has a grade or a review | starting draft number, imports (section 5) | For each earlier draft: its number, the path to its text (or the text pasted in the reply), the path to its review if any, the review date if known, its overall grade, and any criterion grades. An earlier draft with neither a grade nor a review is not imported (section 5). |
 
 Item 8 example reply: `start at 3. draft 1: text old/essay-v1.md, review old/review-1.txt, overall C+. draft 2: text old/essay-v2.md, overall B-, argument B, mechanics C+.`
 
 How to store the answers:
 
-- A work line becomes `primary_text: <work> | <translator or edition> | <locator system>`. Always keep both bars; an unknown field is left empty (`primary_text: The Tidal Ledger | | page numbers`). If a field contains a vertical bar, ask the user to write it another way.
+- A work line becomes `primary_text: <work> | <translator or edition> | <locator system>`. Always keep both bars; an unknown field is left empty (`primary_text: The Tidal Ledger | | page numbers`). If a field contains a vertical bar, or the answer has more than three semicolon-separated parts, ask the user to write it another way.
 - Join a multi-line answer into one line with single spaces. Change nothing else. In a Markdown table cell write a literal pipe as `\|`.
 - With no work given, write one empty line `primary_text:`.
 - Grades use exactly A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F. Accept lower case and write it in capitals; reject anything else, name the accepted set and ask again. A criterion with no grade is `not graded`.
-- Draft numbers are whole numbers of 1 or more, each used once. The starting number must be larger than every earlier number listed; if the user lists earlier drafts and gives no start, use the highest number plus 1. Without earlier drafts the starting number is 1.
+- Draft numbers are whole numbers of 1 or more, each used once. The starting number must be larger than every earlier number listed; if the user lists earlier drafts and gives no start, use the highest number plus 1. With no earlier drafts listed and no start given, the starting number is 1; a start the user gives is kept even when no earlier draft is imported.
 - Files: accept only `.md` and `.txt`. For another format (Word, PDF, HTML, LaTeX) tell the user to save a Markdown or text copy, or paste the text; list the file as not copied. Skip a file larger than 2 MiB or one that cannot be read in full, and list it. A path outside the working folder may raise a read prompt; approving a read of the file the user named is safe.
 
 ## 3. Part 2: choice questions (question tool)
@@ -45,12 +45,12 @@ How to store the answers:
 
 | Header | Question | Options, default first | Stored as |
 |---|---|---|---|
-| Genre | What kind of essay is it? | Argumentative research essay (Recommended); Theoretical or conceptual essay; Other | `genre`: argumentative, theoretical, other |
+| Genre | What kind of essay is it? | Argumentative research essay (Recommended); Theoretical or conceptual essay; Another kind of text | `genre`: argumentative, theoretical, other |
 | Harshness | How strict should the grading be? | Harsh (Recommended): an exact tie rounds down and B+ or above needs two verified strengths; Neutral: an exact tie rounds up and one verified strength is enough | `harshness`: harsh, neutral |
 | Citations | Which citation style? | Chicago notes-bibliography (Recommended); Chicago author-date; MLA 9; Links, for essays that cite by hyperlink | `style`: chicago-notes, chicago-author-date, mla, links |
 | Spelling | Which spelling variety? | Either (Recommended): flag only inconsistency; UK; US | `spelling`: either, uk, us |
 
-- Typed text under Genre means `other`. When the genre is `other`, print this warning once: "Outside the tool's design: it grades argumentative and theoretical academic writing. This essay will still be graded as an argument against the same descriptors, and the result will be flagged."
+- "Another kind of text" and typed text under Genre both mean `other`. When the genre is `other`, print this warning once: "Outside the tool's design: it grades argumentative and theoretical academic writing. This essay will still be graded as an argument against the same descriptors, and the result will be flagged."
 - Essays not written in English are out of scope: say so if the user mentions another language.
 
 **Call B: calibration.**
@@ -59,9 +59,9 @@ How to store the answers:
 |---|---|---|---|
 | Weights | How should the six criteria be weighted? | Equal, 1 each (Recommended); Custom | `weight_*` |
 | Anchors | How many confirmed anchors should each reviewer see? | 4 (Recommended); 2; 3; 6 | `anchor_count`; Other takes a whole number from 0 to 10 |
-| Seed | Seed for the order in which anchors are shown | 1 (Recommended); Pick another number for me | `anchor_seed`; Other takes a whole number |
+| Seed | Seed for the order in which anchors are shown | 1 (Recommended); Pick another number for me | `anchor_seed`; Other takes a whole number of 0 or more |
 
-- With Custom weights, ask one question per criterion, in two calls of up to four: Command of primary texts, Argument, Structure and organisation, Use of sources, Originality, Mechanics. Options: 1 (Recommended), 2, 3; Other takes any whole number of 1 or more (no zero, no decimals). Store as `weight_primary`, `weight_argument`, `weight_structure`, `weight_sources`, `weight_originality`, `weight_mechanics`.
+- With Custom weights, ask one question per criterion, in two calls of up to four (headers Primary, Argument, Structure, Sources, Originality, Mechanics; questions "Weight for command of primary texts?", "Weight for argument?", and so on for structure and organisation, use of sources, originality and mechanics). Options: 1 (Recommended), 2, 3; Other takes any whole number of 1 or more (no zero, no decimals). Store as `weight_primary`, `weight_argument`, `weight_structure`, `weight_sources`, `weight_originality`, `weight_mechanics`.
 - "Pick another number for me": choose a whole number from 2 to 99999 yourself and say which one.
 
 **Call C: who confirmed each earlier grade.** Ask only when Part 1 item 8 listed earlier graded drafts. One question per draft, at most four per call:
@@ -78,7 +78,7 @@ The default is the tool because an unconfirmed anchor is the safe error: it is i
 |---|---|
 | `RUBRIC.md` | The template with every value filled from the answers. No key is dropped or renamed. |
 | `STATE.md` | The template, plus the title and genre where the template has a place for them, the starting draft number in `next_draft`, and the rows of section 5. |
-| `SOURCES.md` | The template, plus one row per `primary_text` line in the OPENED table: the work (field 1) names the source and the "edition used by the author" cell holds fields 2 and 3 as `<field 2>; <field 3>` (leave out an empty field). Every other cell stays as the template has it, and no copy is marked as read. |
+| `SOURCES.md` | The template, plus one row per `primary_text` line in the OPENED table: field 1 goes in the `work` cell, field 2 in "edition used by the author" and field 3 in "locator system" (an empty field leaves its cell empty). Every other cell, the `id` included, stays empty until a grade run reads a copy or finds none, and no copy is marked as read. |
 | `brief.md` | The brief, copied exactly, when one was given. |
 | `anchors/draft-N/text.md`, `ANCHOR.md` | One folder per imported draft that has text (section 5). |
 | `feedback/draft-N-review.md` | A copy of the review of draft N, when given. |
@@ -94,12 +94,12 @@ Copy, never move. Read the source file (in parts if it is too long for one Read 
 1. **Text.** If an overall grade and a text path or pasted text were given and the text is accepted, write `anchors/draft-N/text.md`. A text without an overall grade is not copied (a folder under `anchors/` with no ANCHOR.md would break anchor selection), and an earlier draft with neither a grade nor a review is not imported: say so, and say that the grade skill saves each draft it grades under the next number. Nothing is copied into `drafts/`, because a file there with no history row would read as an interrupted run.
 2. **Review.** If a review path was given, write `feedback/draft-N-review.md`. Other third-party comments the user supplies go to `feedback/comments-1.md`, `feedback/comments-2.md` and so on.
 3. **ANCHOR.md.** With text and an overall grade, write `anchors/draft-N/ANCHOR.md` from the template:
-   - `imported: yes`, `model: unknown`, `human_adjusted: no`, `note:` naming the source file by its file name only (no folder, so no user or machine name is recorded).
+   - `draft: N`, `essay:` the slug, `imported: yes`, `model: unknown`, `human_adjusted: no`, `note:` naming the source file by its file name only (no folder, so no user or machine name is recorded).
    - `overall_as_submitted` and `overall_alone` both take the overall grade given. `band` is the letter of that grade.
-   - One row for `overall_alone` and one for each criterion the user gave a grade for. `structure` is always `not graded` for an imported draft, even if the user gives a value; say once that no earlier record is a calibration for it. Criteria with no grade are `not graded`. The `conditional` cell stays empty.
+   - Write all seven rows of the template, in its order. A criterion the user gave a grade for carries it. `structure` is always `not graded` for an imported draft, even if the user gives a value; say once that no earlier record is a calibration for it. Every criterion with no grade is `not graded` too, with `tool_grade` `none` and `status` and `confirmed_by` `unconfirmed` whoever confirmed the rest. The `conditional` cell stays empty.
    - Rationale: `Imported from an earlier review; no rationale was recorded.`
-   - If the user said the author or an instructor confirmed the grade: every graded row gets `tool_grade` of `none`, `status` of `confirmed` and that person in `confirmed_by`, and the header `confirmed_by` is that person.
-   - If the user said the tool: `tool_grade` equals `grade`, `status` and `confirmed_by` are `unconfirmed`, and the header `confirmed_by` is `unconfirmed`.
+   - If the user said the author or an instructor confirmed the grade: every graded row (not the `not graded` ones) gets `tool_grade` of `none`, `status` of `confirmed` and that person in `confirmed_by`, and the header `confirmed_by` is that person.
+   - If the user said the tool: on every graded row `tool_grade` equals `grade`, `status` and `confirmed_by` are `unconfirmed`, and the header `confirmed_by` is `unconfirmed`.
 4. **History row.** Only when an overall grade was given (a review without a grade is copied to `feedback/` and gets no row), add one row to the grade history table in `STATE.md`: the draft number; the review date if the user gave one, otherwise empty; the review path (`feedback/draft-N-review.md`) if copied; overall as submitted and overall alone both the given grade; the criterion grades given, with `not graded` for every other criterion including Structure; `imported` yes; `human-adjusted` no; every other cell empty. Match columns by the template's header names.
 5. **Anchors register.** When an ANCHOR.md was written, add a row for it to the anchors register in `STATE.md` with its draft number, overall alone, band and `confirmed_by`.
 6. **No text.** If there is an overall grade but no draft text, write the history row (and the review copy, if any) and no anchor; say it cannot serve as an anchor.

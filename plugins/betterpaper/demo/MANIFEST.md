@@ -1,4 +1,4 @@
-# Workspace files that init copies into betterpaper/demo-essay/, one path per line
+# Workspace files that init copies into betterpaper/demo-essay/, one path per line (this file is not copied; empty folders get placeholders)
 README.md
 RUBRIC.md
 STATE.md

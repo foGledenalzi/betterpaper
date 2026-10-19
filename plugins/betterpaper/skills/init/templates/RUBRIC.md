@@ -28,7 +28,7 @@ The settings are the `key: value` lines above, up to the first blank line. Each 
 |---|---|---|
 | genre | argumentative, theoretical, other | other means the essay is outside the tool's design: it is graded as an argument and flagged once |
 | harshness | harsh, neutral | the two settings differ in two rules only: the direction of an exact tie, and the verified strengths needed for B+ or above (two under harsh, one under neutral) |
-| style | chicago-notes, chicago-author-date, mla, links | selects the citation style file of the same name (links covers essays that cite by hyperlink) |
+| style | chicago-notes, chicago-author-date, mla, links | selects the citation style file of the same name (links selects web-links.md and covers essays that cite by hyperlink) |
 | weight_primary, weight_argument, weight_structure, weight_sources, weight_originality, weight_mechanics | whole numbers of 1 or more | relative weights, equal by default |
 | anchor_count | whole number, 0 to 10 | the most confirmed anchors shown to each reviewer |
 | anchor_seed | whole number | fixes the order in which anchors are shown; set once |
